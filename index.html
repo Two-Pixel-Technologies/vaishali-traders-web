@@ -30,7 +30,23 @@
   --nav-h:72px;
   --max:1280px;
 }
-html{scroll-behavior:smooth}
+@keyframes pulse-wa {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+.wa-float{
+  position:fixed;bottom:30px;left:30px;
+  width:60px;height:60px;background:#25D366;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 25px rgba(37,211,102,0.3);z-index:999;
+  transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: pulse-wa 2s infinite;
+}
+.wa-float:hover{transform:scale(1.1) translateY(-5px);box-shadow:0 12px 30px rgba(37,211,102,0.4);}
+.wa-float svg{width:32px;height:32px;fill:#fff}
+@media(max-width:768px){ .wa-float{ display:flex;bottom:20px;left:20px;width:54px;height:54px; } }
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
@@ -321,20 +337,14 @@ h2.s-title i{font-style:italic;color:var(--brand)}
   border-color:var(--brand);
 }
 .bc-logo{
-  height:90px;display:flex;align-items:center;justify-content:center;
-  padding:14px 22px;border-bottom:1px solid var(--border);
+  height:150px;display:flex;align-items:center;justify-content:center;
+  padding:0 15px;border-bottom:1px solid var(--border);
 }
+.bc-logo img{max-height:100%;max-width:100%;object-fit:contain;mix-blend-mode:multiply}
 .bc-body{padding:18px 20px 22px}
 .bc-name{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:5px}
 .bc-desc{font-size:12px;line-height:1.7;color:var(--body)}
-.bc-badge{
-  display:inline-flex;align-items:center;gap:5px;
-  margin-top:12px;font-size:10px;font-weight:600;
-  letter-spacing:.1em;text-transform:uppercase;
-  color:var(--brand);background:var(--brand-pale);
-  padding:4px 10px;border-radius:40px;
-}
-.bc-badge::before{content:'✓';font-size:9px}
+
 
 /* ────────────────────────────────────────────────────────
    WHY US
@@ -555,14 +565,16 @@ h2.s-title i{font-style:italic;color:var(--brand)}
   background:var(--brand);color:#fff;
   padding:13px 26px;border-radius:40px;
   font-size:13px;font-weight:600;
-  transition:background .2s,transform .15s;display:inline-block;
+  transition:background .2s,transform .15s;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
 }
 .btn-solid:hover{background:var(--brand-light);transform:translateY(-1px)}
 .btn-outline{
   padding:13px 26px;border-radius:40px;
   font-size:13px;font-weight:600;
   border:1.5px solid var(--border);color:var(--ink);
-  transition:border-color .2s,background .2s;display:inline-block;
+  transition:border-color .2s,background .2s;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
 }
 .btn-outline:hover{border-color:var(--brand);background:var(--brand-pale);color:var(--brand)}
 
@@ -824,9 +836,9 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
       <li><a href="#showroom">Showrooms</a></li>
     </ul>
     <div class="nav-right">
-      <a href="tel:+919587999947" class="nav-phone">
+      <a href="tel:+919251049050" class="nav-phone">
         <svg viewBox="0 0 24 24"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        +91 95879 99947
+        +91 92510 49050
       </a>
       <a href="#showroom" class="nav-cta">Free Consultation</a>
       <button class="ham" id="ham" aria-label="Menu">
@@ -843,7 +855,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
   <a href="#clients" onclick="cm()">Our Clients</a>
   <a href="#livspace" onclick="cm()">Livspace</a>
   <a href="#showroom" onclick="cm()">Showrooms</a>
-  <a href="tel:+919587999947" class="mob-ph">📞 +91 95879 99947</a>
+  <a href="tel:+919251049050" class="mob-ph">📞 +91 92510 49050</a>
   <a href="#showroom" class="mob-cta" onclick="cm()">Free Consultation</a>
 </div>
 
@@ -862,7 +874,8 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
             Explore Products
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="tel:+919587999947" class="btn-secondary" target="_blank">
+          <a href="https://wa.me/919251049050" class="btn-secondary" target="_blank">
+            <svg style="width:18px;height:18px;margin-right:4px" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42 1.56 1.56 2.41 3.63 2.41 5.83 0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.33a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.21 8.25-8.21m-3.41 4.72c-.19 0-.45.07-.69.33-.23.27-.9.88-.9 2.15 0 1.27.92 2.5 1.05 2.68.12.17 1.83 2.79 4.42 3.91.62.27 1.1.43 1.47.55.62.2 1.18.17 1.63.1.5-.07 1.53-.63 1.74-1.24.21-.61.21-1.13.14-1.24-.07-.1-.23-.17-.49-.3-.26-.13-1.53-.76-1.77-.85-.23-.09-.4-.13-.57.13-.17.27-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.09-1.3-.77-.69-1.29-1.55-1.44-1.82-.15-.27-.02-.41.12-.54.12-.11.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.51-.39-.44-.56-.45"/></svg>
             Contact Us
           </a>
         </div>
@@ -919,7 +932,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
       <p class="s-desc">Everything for your dream space — from premium faucets to designer tiles and architectural lighting.</p>
     </div>
     <div class="prod-grid reveal">
-      <div class="prod-card">
+      <div class="prod-card" id="cat-faucets">
         <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=85" alt="Faucets">
         <div class="prod-grad"></div>
         <div class="prod-body">
@@ -929,7 +942,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
           <div class="prod-arrow">View Range →</div>
         </div>
       </div>
-      <div class="prod-card">
+      <div class="prod-card" id="cat-tiles">
         <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=85" alt="Tiles">
         <div class="prod-grad"></div>
         <div class="prod-body">
@@ -939,7 +952,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
           <div class="prod-arrow">View Range →</div>
         </div>
       </div>
-      <div class="prod-card">
+      <div class="prod-card" id="cat-sanitaryware">
         <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=85" alt="Sanitaryware">
         <div class="prod-grad"></div>
         <div class="prod-body">
@@ -949,7 +962,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
           <div class="prod-arrow">View Range →</div>
         </div>
       </div>
-      <div class="prod-card">
+      <div class="prod-card" id="cat-lighting">
         <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&q=85" alt="Lighting">
         <div class="prod-grad"></div>
         <div class="prod-body">
@@ -959,7 +972,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
           <div class="prod-arrow">View Range →</div>
         </div>
       </div>
-      <div class="prod-card">
+      <div class="prod-card" id="cat-wellness">
         <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=600&q=85" alt="Wellness">
         <div class="prod-grad"></div>
         <div class="prod-body">
@@ -969,7 +982,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
           <div class="prod-arrow">View Range →</div>
         </div>
       </div>
-      <div class="prod-card">
+      <div class="prod-card" id="cat-heating">
         <img src="images/geyser.png" alt="Heat Pumps">
         <div class="prod-grad"></div>
         <div class="prod-body">
@@ -979,7 +992,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
           <div class="prod-arrow">View Range →</div>
         </div>
       </div>
-      <div class="prod-card">
+      <div class="prod-card" id="cat-tanks">
         <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=85" alt="SS Tanks">
         <div class="prod-grad"></div>
         <div class="prod-body">
@@ -989,7 +1002,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
           <div class="prod-arrow">View Range →</div>
         </div>
       </div>
-      <div class="prod-card">
+      <div class="prod-card" id="cat-plumbing">
         <img src="images/pvc.png" alt="Pipes">
         <div class="prod-grad"></div>
         <div class="prod-body">
@@ -1033,7 +1046,6 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
   </div>
 </section>
 
-<!-- ═══════════ LIVSPACE ═══════════ -->
 <section id="livspace">
   <div class="ls-wrap">
     <div class="ls-visual">
@@ -1092,12 +1104,13 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
         </div>
       </div>
       <div class="ls-cta-row">
-        <a href="tel:+919587999947" class="btn-livspace">Book a Free Consultation</a>
+        <a href="tel:+919251049050" class="btn-livspace">Book a Free Consultation</a>
         <a href="#showroom" class="btn-ls-ghost">Visit Our Showroom</a>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- ═══════════ BRANDS ═══════════ -->
 <section id="brands" class="section">
@@ -1108,14 +1121,14 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
       <p class="s-desc">Official authorized dealers of India's most trusted bath, tile and lighting brands — guaranteed genuine products with manufacturer warranty.</p>
     </div>
     <div class="brands-grid reveal">
-      <div class="brand-card"><div class="bc-logo"><img src="images/jaguar2.png" alt="Jaquar" style="height:150px"></div><div class="bc-body"><div class="bc-name">Jaquar</div><div class="bc-desc">India's No.1 complete bathroom & lighting brand. Present in 55+ countries — faucets, sanitaryware, showers, wellness & lighting.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#fdf9f2"><img src="images/artize.jpg" alt="Artize" style="height:150px"></div><div class="bc-body"><div class="bc-name">Artize</div><div class="bc-desc">Jaquar Group's luxury lifestyle brand — exquisite designer bath fittings for discerning, premium interiors.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f2f7fd"><img src="images/colston1.png" alt="Colston" style="height:60px"></div><div class="bc-body"><div class="bc-name">Colston</div><div class="bc-desc">Premium sanitaryware, bath fittings, whirlpool spas, steam & sauna — complete wellness solutions.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f4faf4"><img src="images/essco1.png" alt="Essco" style="height:70px", width="200px"></div><div class="bc-body"><div class="bc-name">Essco</div><div class="bc-desc">Quality faucets & sanitaryware for the value segment — functional, durable and budget-friendly.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#fdf8ee"><img src="images/qutone.png" alt="Qutone" style="height:100px"></div><div class="bc-body"><div class="bc-name">Qutone</div><div class="bc-desc">Designer floor & wall tiles — premium vitrified, ceramic and GVT tiles to transform any space.</div><span class="bc-badge">Tile Partner</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f0f7fc"><img src="images/purever.png" alt="Purever" style="height:150px", width="225px"></div><div class="bc-body"><div class="bc-name">Purever</div><div class="bc-desc">India's leading stainless steel overhead water tanks — hygienic, rust-proof and built to last.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f0f6fc"><div style="font-weight:900;font-size:32px;color:#0a5a9a">H₂O</div></div><div class="bc-body"><div class="bc-name">H2O &amp; Kingpure</div><div class="bc-desc">Premium SS water storage solutions in multiple capacities for residential and commercial projects.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo"><img src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=400&q=80" alt="Imported Tiles" style="height:60px;width:100%;object-fit:cover;border-radius:4px"></div><div class="bc-body"><div class="bc-name">Imported Tiles</div><div class="bc-desc">Exclusive tiles from Italy, Spain & Europe — for spaces that demand something truly extraordinary.</div><span class="bc-badge">European Collection</span></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/jaguar2.png" alt="Jaquar" style="width: 240px; height: auto;"></div><div class="bc-body"><div class="bc-name">Jaquar</div><div class="bc-desc">India's No.1 complete bathroom & lighting brand. Present in 55+ countries — faucets, sanitaryware, showers, wellness & lighting.</div></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#fdf9f2"><img src="images/artize.jpg" alt="Artize" style="width: 320px; height: auto; object-fit: contain;"></div><div class="bc-body"><div class="bc-name">Artize</div><div class="bc-desc">Jaquar Group's luxury lifestyle brand — exquisite designer bath fittings for discerning, premium interiors.</div></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#f2f7fd"><img src="images/colston1.png" alt="Colston" style="width: 200px; height: auto;"></div><div class="bc-body"><div class="bc-name">Colston</div><div class="bc-desc">Premium sanitaryware, bath fittings, whirlpool spas, steam & sauna — complete wellness solutions.</div></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#f4faf4"><img src="images/essco1.png" alt="Essco" style="width: 200px; height: auto;"></div><div class="bc-body"><div class="bc-name">Essco</div><div class="bc-desc">Quality faucets & sanitaryware for the value segment — functional, durable and budget-friendly.</div></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#fdf8ee"><img src="images/qutone.png" alt="Qutone" style="width: 200px; height: auto;"></div><div class="bc-body"><div class="bc-name">Qutone</div><div class="bc-desc">Designer floor & wall tiles — premium vitrified, ceramic and GVT tiles to transform any space.</div></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#f0f7fc"><img src="images/purever1.jpg" alt="Purever" style="width: 550px; height: auto; max-height: 120px; object-fit: contain;"></div><div class="bc-body"><div class="bc-name">Purever</div><div class="bc-desc">India's leading stainless steel overhead water tanks — hygienic, rust-proof and built to last.</div></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#f0f6fc"><div style="font-weight:900;font-size:45px;color:#0a5a9a">H₂O</div></div><div class="bc-body"><div class="bc-name">H2O &amp; Kingpure</div><div class="bc-desc">Premium SS water storage solutions in multiple capacities for residential and commercial projects.</div></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=400&q=80" alt="Imported Tiles" style="width: 100%; height: 100px; object-fit: cover; border-radius: 4px;"></div><div class="bc-body"><div class="bc-name">Imported Tiles</div><div class="bc-desc">Exclusive tiles from Italy, Spain & Europe — for spaces that demand something truly extraordinary.</div></div></div>
     </div>
   </div>
 </section>
@@ -1155,6 +1168,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
     </div>
   </div>
 </section>
+
 
 <!-- ═══════════ CLIENTS ═══════════ -->
 <section id="clients" class="section">
@@ -1196,10 +1210,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
       </div>
     </div>
 
-    <!-- Client category tabs & cards -->
     </div>
-  </div>
-</section>
 
   </div>
 </section>
@@ -1223,13 +1234,19 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
       <div class="hr-row"><span class="hr-day">Sunday</span><span class="hr-time hr-closed">Closed</span></div>
     </div>
     <div class="contact-rows">
-      <div class="contact-r"><div class="contact-icon">📞</div><a href="tel:+919587999947">+91 95879 99947</a></div>
+      <div class="contact-r"><div class="contact-icon">📞</div><a href="tel:+919251049050">+91 92510 49050</a></div>
       <div class="contact-r"><div class="contact-icon">✉️</div><a href="mailto:vaishalitrader@gmail.com">vaishalitrader@gmail.com</a></div>
       <div class="contact-r"><div class="contact-icon">🌐</div><a href="https://vaishalitraders.in">www.vaishalitraders.in</a></div>
     </div>
     <div class="sw-btns">
-      <a href="tel:+919587999947" class="btn-solid">Call Now</a>
-      <a href="https://wa.me/919587999947" class="btn-outline" target="_blank">WhatsApp Us</a>
+      <a href="tel:+919251049050" class="btn-solid">
+        <svg style="width:18px;height:18px" viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Call Now
+      </a>
+      <a href="https://wa.me/919251049050" class="btn-outline" target="_blank">
+        <svg style="width:18px;height:18px" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42 1.56 1.56 2.41 3.63 2.41 5.83 0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.33a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.21 8.25-8.21m-3.41 4.72c-.19 0-.45.07-.69.33-.23.27-.9.88-.9 2.15 0 1.27.92 2.5 1.05 2.68.12.17 1.83 2.79 4.42 3.91.62.27 1.1.43 1.47.55.62.2 1.18.17 1.63.1.5-.07 1.53-.63 1.74-1.24.21-.61.21-1.13.14-1.24-.07-.1-.23-.17-.49-.3-.26-.13-1.53-.76-1.77-.85-.23-.09-.4-.13-.57.13-.17.27-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.09-1.3-.77-.69-1.29-1.55-1.44-1.82-.15-.27-.02-.41.12-.54.12-.11.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.51-.39-.44-.56-.45"/></svg>
+        WhatsApp Us
+      </a>
     </div>
   </div>
 </div>
@@ -1246,19 +1263,19 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
         <div class="ft-logo"><img src="data:image/png;base64,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" alt="Vaishali Traders"></div>
         <p class="ft-desc">Your one-stop destination for premium bathroom fittings, sanitaryware, designer tiles, lighting & wellness solutions. Authorized dealers, Est. 1989, Jaipur.</p>
         <div class="ft-social">
-          <a href="tel:+919587999947">📞</a>
-          <a href="mailto:vaishalitrader@gmail.com">✉️</a>
-          <a href="https://wa.me/919587999947" target="_blank">💬</a>
+          <a href="tel:+919251049050" title="Call Us"><svg style="width:20px;height:20px" viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></a>
+          <a href="mailto:vaishalitrader@gmail.com" title="Email Us"><svg style="width:20px;height:20px" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+          <a href="https://wa.me/919251049050" target="_blank" title="WhatsApp Us"><svg style="width:20px;height:20px" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42 1.56 1.56 2.41 3.63 2.41 5.83 0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.33a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.21 8.25-8.21m-3.41 4.72c-.19 0-.45.07-.69.33-.23.27-.9.88-.9 2.15 0 1.27.92 2.5 1.05 2.68.12.17 1.83 2.79 4.42 3.91.62.27 1.1.43 1.47.55.62.2 1.18.17 1.63.1.5-.07 1.53-.63 1.74-1.24.21-.61.21-1.13.14-1.24-.07-.1-.23-.17-.49-.3-.26-.13-1.53-.76-1.77-.85-.23-.09-.4-.13-.57.13-.17.27-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.09-1.3-.77-.69-1.29-1.55-1.44-1.82-.15-.27-.02-.41.12-.54.12-.11.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.51-.39-.44-.56-.45"/></svg></a>
         </div>
       </div>
       <div class="fc"><h4>Products</h4><ul>
-        <li><a href="#products">Faucets &amp; Mixers</a></li>
-        <li><a href="#products">Sanitaryware</a></li>
-        <li><a href="#products">Tiles</a></li>
-        <li><a href="#products">Lighting</a></li>
-        <li><a href="#products">Whirlpool &amp; Spas</a></li>
-        <li><a href="#products">SS Overhead Tanks</a></li>
-        <li><a href="#products">CPVC &amp; PVC</a></li>
+        <li><a href="#cat-faucets">Faucets &amp; Mixers</a></li>
+        <li><a href="#cat-sanitaryware">Sanitaryware</a></li>
+        <li><a href="#cat-tiles">Tiles</a></li>
+        <li><a href="#cat-lighting">Lighting</a></li>
+        <li><a href="#cat-wellness">Whirlpool &amp; Spas</a></li>
+        <li><a href="#cat-tanks">SS Overhead Tanks</a></li>
+        <li><a href="#cat-plumbing">CPVC &amp; PVC</a></li>
       </ul></div>
       <div class="fc"><h4>Brands</h4><ul>
         <li><a href="#brands">Jaquar</a></li>
@@ -1271,7 +1288,6 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
         <li><a href="#brands">Imported Tiles</a></li>
       </ul></div>
       <div class="fc"><h4>Quick Links</h4><ul>
-        <li><a href="#clients">Our Clients</a></li>
         <li><a href="#livspace">Livspace Kitchen</a></li>
         <li><a href="#showroom">Visit Showroom</a></li>
         <li><a href="#showroom">Free Consultation</a></li>
@@ -1314,6 +1330,11 @@ const obs=new IntersectionObserver(es=>es.forEach((e,i)=>{
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 
+
+
 </script>
+<a href="https://wa.me/919251049050" class="wa-float" target="_blank" aria-label="WhatsApp Us">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42 1.56 1.56 2.41 3.63 2.41 5.83 0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.33a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.21 8.25-8.21m-3.41 4.72c-.19 0-.45.07-.69.33-.23.27-.9.88-.9 2.15 0 1.27.92 2.5 1.05 2.68.12.17 1.83 2.79 4.42 3.91.62.27 1.1.43 1.47.55.62.2 1.18.17 1.63.1.5-.07 1.53-.63 1.74-1.24.21-.61.21-1.13.14-1.24-.07-.1-.23-.17-.49-.3-.26-.13-1.53-.76-1.77-.85-.23-.09-.4-.13-.57.13-.17.27-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.09-1.3-.77-.69-1.29-1.55-1.44-1.82-.15-.27-.02-.41.12-.54.12-.11.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.51-.39-.44-.56-.45"/></svg>
+</a>
 </body>
 </html>
