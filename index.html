@@ -101,15 +101,16 @@ a{text-decoration:none;color:inherit}
    HERO — THE WOW FACTOR: Fullscreen split with floating card
 ──────────────────────────────────────────────────────── */
 .hero{
-  min-height:100vh;padding-top:var(--nav-h);
+  height:100vh;padding-top:var(--nav-h);
   display:grid;grid-template-columns:52% 48%;
   overflow:hidden;
 }
 .hero-l{
   display:flex;flex-direction:column;justify-content:center;
-  padding:72px 64px 72px 80px;
+  padding:40px 64px 40px 80px;
   background:var(--white);
   position:relative;
+  height:calc(100vh - var(--nav-h));
 }
 .hero-pill{
   display:inline-flex;align-items:center;gap:8px;
@@ -176,25 +177,7 @@ a{text-decoration:none;color:inherit}
   background:linear-gradient(160deg,rgba(13,15,20,.5) 0%,rgba(30,64,128,.3) 100%);
 }
 
-/* ★ WOW FACTOR — Floating Stats Card */
-.hero-float-card{
-  position:absolute;top:50%;left:-40px;transform:translateY(-50%);
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(24px);
-  border-radius:20px;
-  padding:28px 32px;
-  box-shadow:var(--shadow-lg);
-  width:220px;
-  border:1px solid rgba(255,255,255,.8);
-  animation:floatY 6s ease-in-out infinite;
-}
-@keyframes floatY{0%,100%{transform:translateY(calc(-50% - 8px))}50%{transform:translateY(calc(-50% + 8px))}}
-.hfc-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-.hfc-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.hfc-row:last-child{margin-bottom:0}
-.hfc-icon{width:36px;height:36px;border-radius:10px;background:var(--brand-pale);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.hfc-n{font-size:20px;font-weight:800;color:var(--brand);line-height:1}
-.hfc-l{font-size:10px;color:var(--muted);font-weight:500}
+
 
 /* bottom badge */
 .hero-brand-badge{
@@ -271,6 +254,7 @@ h2.s-title i{font-style:italic;color:var(--brand)}
 .prod-card:nth-child(5){grid-column:span 5}
 .prod-card:nth-child(6){grid-column:span 4}
 .prod-card:nth-child(7){grid-column:span 3}
+.prod-card:nth-child(8),.prod-card:nth-child(9),.prod-card:nth-child(10),.prod-card:nth-child(11){grid-column:span 3}
 .prod-card img{
   width:100%;height:100%;object-fit:cover;
   transition:transform .6s ease,filter .4s;
@@ -295,13 +279,7 @@ h2.s-title i{font-style:italic;color:var(--brand)}
   transition:opacity .25s,transform .25s;
 }
 .prod-card:hover .prod-arrow{opacity:1;transform:translateY(0)}
-.prod-also{
-  grid-column:span 12;
-  background:var(--surface);border-radius:var(--radius);
-  padding:30px 40px;
-  display:flex;align-items:center;justify-content:space-between;gap:24px;
-  border:1.5px solid var(--border);
-}
+
 .also-left .also-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .also-items{
   font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);
@@ -770,8 +748,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
   .prod-card:nth-child(2){grid-column:span 2}
   .prod-card:nth-child(3),.prod-card:nth-child(4){grid-column:span 1}
   .prod-card:nth-child(5),.prod-card:nth-child(6){grid-column:span 1}
-  .prod-card:nth-child(7){grid-column:span 2}
-  .prod-also{grid-column:span 2}
+  .prod-card:nth-child(7),.prod-card:nth-child(8),.prod-card:nth-child(9),.prod-card:nth-child(10),.prod-card:nth-child(11){grid-column:span 2}
   .brands-grid{grid-template-columns:1fr 1fr}
   .why-grid{grid-template-columns:1fr 1fr}
   .clients-intro{grid-template-columns:1fr}
@@ -795,8 +772,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
   .btn-primary,.btn-secondary{justify-content:center;width:100%}
   .prod-grid{grid-template-columns:1fr;grid-auto-rows:auto}
   .prod-card{aspect-ratio:4/3}
-  .prod-card:nth-child(1),.prod-card:nth-child(2),.prod-card:nth-child(7){grid-column:span 1}
-  .prod-also{grid-column:span 1;flex-direction:column}
+  .prod-card:nth-child(1),.prod-card:nth-child(2),.prod-card:nth-child(7),.prod-card:nth-child(8),.prod-card:nth-child(9),.prod-card:nth-child(10),.prod-card:nth-child(11){grid-column:span 1}
   .brands-grid{grid-template-columns:1fr 1fr;gap:10px}
   .why-grid{grid-template-columns:1fr}
   .why-card{border-bottom:1px solid rgba(255,255,255,.07)}
@@ -828,7 +804,6 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
       <li><a href="#clients">Our Clients</a></li>
       <li><a href="#livspace">Livspace</a></li>
       <li><a href="#showroom">Showrooms</a></li>
-      <li><a href="#catalogues">Catalogues</a></li>
     </ul>
     <div class="nav-right">
       <a href="tel:+919587999947" class="nav-phone">
@@ -850,7 +825,6 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
   <a href="#clients" onclick="cm()">Our Clients</a>
   <a href="#livspace" onclick="cm()">Livspace</a>
   <a href="#showroom" onclick="cm()">Showrooms</a>
-  <a href="#catalogues" onclick="cm()">Catalogues</a>
   <a href="tel:+919587999947" class="mob-ph">📞 +91 95879 99947</a>
   <a href="#showroom" class="mob-cta" onclick="cm()">Free Consultation</a>
 </div>
@@ -869,12 +843,12 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
         Explore Products
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="#catalogues" class="btn-secondary">
-        Download Catalogues
+      <a href="https://wa.me/911234567890" class="btn-secondary" target="_blank">
+        Contact Us
       </a>
     </div>
     <div class="hero-stats">
-      <div class="hstat"><div class="hstat-n">35+</div><div class="hstat-l">Years Est.</div></div>
+      <div class="hstat"><div class="hstat-n">37+</div><div class="hstat-l">Years Est.</div></div>
       <div class="hstat"><div class="hstat-n">1L+</div><div class="hstat-l">Customers</div></div>
       <div class="hstat"><div class="hstat-n">2</div><div class="hstat-l">Showrooms</div></div>
     </div>
@@ -883,22 +857,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
     <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1400&q=88" alt="Luxury bathroom interior">
     <div class="hero-r-overlay"></div>
 
-    <!-- ★ WOW FACTOR — Animated floating card -->
-    <div class="hero-float-card">
-      <div class="hfc-tag">Showroom Highlights</div>
-      <div class="hfc-row">
-        <div class="hfc-icon">🚿</div>
-        <div><div class="hfc-n">500+</div><div class="hfc-l">Faucet designs</div></div>
-      </div>
-      <div class="hfc-row">
-        <div class="hfc-icon">⬜</div>
-        <div><div class="hfc-n">200+</div><div class="hfc-l">Tile collections</div></div>
-      </div>
-      <div class="hfc-row">
-        <div class="hfc-icon">💡</div>
-        <div><div class="hfc-n">100+</div><div class="hfc-l">Lighting styles</div></div>
-      </div>
-    </div>
+
 
     <div class="hero-brand-badge">
       <div class="hbb-t">✓ Authorized Jaquar & Artize Dealer</div>
@@ -991,12 +950,12 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
         </div>
       </div>
       <div class="prod-card">
-        <img src="https://images.unsplash.com/photo-1615414487370-2e6455c80df9?w=600&q=85" alt="Steam Sauna">
+        <img src="https://images.unsplash.com/photo-1585136813144-38fc71f0088b?w=600&q=85" alt="Heat Pumps">
         <div class="prod-grad"></div>
         <div class="prod-body">
-          <div class="prod-tag">Wellness</div>
-          <div class="prod-name">Steam &amp; Sauna</div>
-          <div class="prod-brands">Jaquar · Colston</div>
+          <div class="prod-tag">Hot Water</div>
+          <div class="prod-name">Heat Pumps &amp; Centralised Geyser</div>
+          <div class="prod-brands">Jaquar · AO Smith</div>
           <div class="prod-arrow">View Range →</div>
         </div>
       </div>
@@ -1010,216 +969,47 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
           <div class="prod-arrow">View Range →</div>
         </div>
       </div>
-      <div class="prod-also">
-        <div class="also-left">
-          <div class="also-tag">Also Available</div>
-          <div class="also-items">CPVC &amp; PVC Pipes · Shower Enclosures · Bath Accessories · <b>Kitchen Sinks</b></div>
-        </div>
-        <a href="#showroom" class="btn-primary">Get a Quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ BRANDS ═══════════ -->
-<section id="brands" class="section">
-  <div class="section-inner">
-    <div class="section-head reveal">
-      <div class="section-label">Authorized Partners</div>
-      <h2 class="s-title">Brands We <i>Carry</i></h2>
-      <p class="s-desc">Official authorized dealers of India's most trusted bath, tile and lighting brands — guaranteed genuine products with manufacturer warranty.</p>
-    </div>
-    <div class="brands-grid reveal">
-      <div class="brand-card"><div class="bc-logo"><svg viewBox="0 0 220 64" style="width:150px"><text x="110" y="44" font-family="Georgia,serif" font-size="34" font-weight="700" fill="#1e4080" text-anchor="middle" letter-spacing="3">JAQUAR</text><line x1="24" y1="52" x2="196" y2="52" stroke="#c9922a" stroke-width="2"/></svg></div><div class="bc-body"><div class="bc-name">Jaquar</div><div class="bc-desc">India's No.1 complete bathroom & lighting brand. Present in 55+ countries — faucets, sanitaryware, showers, wellness & lighting.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#fdf9f2"><svg viewBox="0 0 220 64" style="width:150px"><text x="110" y="40" font-family="Georgia,serif" font-size="27" font-weight="400" fill="#1a1a1a" text-anchor="middle" letter-spacing="9" font-style="italic">ARTIZE</text><text x="110" y="55" font-family="Arial" font-size="8" fill="#c9922a" text-anchor="middle" letter-spacing="5">LUXURY BATH BRAND</text></svg></div><div class="bc-body"><div class="bc-name">Artize</div><div class="bc-desc">Jaquar Group's luxury lifestyle brand — exquisite designer bath fittings for discerning, premium interiors.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f2f7fd"><svg viewBox="0 0 220 64" style="width:150px"><text x="110" y="41" font-family="Arial,sans-serif" font-size="25" font-weight="800" fill="#2a5fa0" text-anchor="middle" letter-spacing="2">COLSTON</text><text x="110" y="55" font-family="Arial" font-size="7.5" fill="#7aaad0" text-anchor="middle" letter-spacing="3">BATH SOLUTIONS</text></svg></div><div class="bc-body"><div class="bc-name">Colston</div><div class="bc-desc">Premium sanitaryware, bath fittings, whirlpool spas, steam & sauna — complete wellness solutions.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f4faf4"><svg viewBox="0 0 220 64" style="width:150px"><text x="110" y="42" font-family="Arial Black,sans-serif" font-size="31" font-weight="900" fill="#2a7a3a" text-anchor="middle" letter-spacing="2">ESSCO</text><text x="110" y="56" font-family="Arial" font-size="7.5" fill="#60a870" text-anchor="middle" letter-spacing="4">BY JAQUAR GROUP</text></svg></div><div class="bc-body"><div class="bc-name">Essco</div><div class="bc-desc">Quality faucets & sanitaryware for the value segment — functional, durable and budget-friendly.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#fdf8ee"><svg viewBox="0 0 220 64" style="width:150px"><rect x="12" y="12" width="14" height="14" rx="2" fill="#c9922a" opacity="0.9"/><rect x="28" y="12" width="14" height="14" rx="2" fill="#c9922a" opacity="0.45"/><rect x="12" y="28" width="14" height="14" rx="2" fill="#c9922a" opacity="0.45"/><rect x="28" y="28" width="14" height="14" rx="2" fill="#c9922a" opacity="0.9"/><text x="132" y="37" font-family="Georgia,serif" font-size="25" font-weight="700" fill="#2c2a14" text-anchor="middle" letter-spacing="1">QUTONE</text><text x="132" y="52" font-family="Arial" font-size="7.5" fill="#c9922a" text-anchor="middle" letter-spacing="3">TILES &amp; SURFACES</text></svg></div><div class="bc-body"><div class="bc-name">Qutone</div><div class="bc-desc">Designer floor & wall tiles — premium vitrified, ceramic and GVT tiles to transform any space.</div><span class="bc-badge">Tile Partner</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f0f7fc"><svg viewBox="0 0 220 64" style="width:150px"><path d="M18 44 Q18 24 30 18 Q42 24 42 44 Q42 54 30 56 Q18 54 18 44Z" fill="#1a78b8" opacity="0.85"/><text x="130" y="40" font-family="Arial" font-size="24" font-weight="700" fill="#1a78b8" text-anchor="middle" letter-spacing="1">PUREVER</text><text x="130" y="54" font-family="Arial" font-size="7.5" fill="#5aa8d8" text-anchor="middle" letter-spacing="3">SS WATER TANKS</text></svg></div><div class="bc-body"><div class="bc-name">Purever</div><div class="bc-desc">India's leading stainless steel overhead water tanks — hygienic, rust-proof and built to last.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f0f6fc"><svg viewBox="0 0 220 64" style="width:150px"><text x="110" y="44" font-family="Arial Black" font-size="34" font-weight="900" fill="#0a5a9a" text-anchor="middle" letter-spacing="2">H₂O</text><text x="110" y="57" font-family="Arial" font-size="7" fill="#5a9ac0" text-anchor="middle" letter-spacing="3">KINGPURE · H2O</text></svg></div><div class="bc-body"><div class="bc-name">H2O &amp; Kingpure</div><div class="bc-desc">Premium SS water storage solutions in multiple capacities for residential and commercial projects.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card" style="background:var(--ink);border-color:#2a3550"><div class="bc-logo" style="background:rgba(255,255,255,0.05);border-bottom-color:rgba(255,255,255,0.1)"><svg viewBox="0 0 220 64" style="width:150px"><rect x="12" y="12" width="14" height="14" rx="2" fill="#e8b84b" opacity="0.9"/><rect x="28" y="12" width="14" height="14" rx="2" fill="#e8b84b" opacity="0.4"/><rect x="12" y="28" width="14" height="14" rx="2" fill="#e8b84b" opacity="0.4"/><rect x="28" y="28" width="14" height="14" rx="2" fill="#e8b84b" opacity="0.9"/><text x="136" y="35" font-family="Georgia,serif" font-size="16" fill="#fff" text-anchor="middle" letter-spacing="2" font-style="italic">Imported</text><text x="136" y="51" font-family="Arial" font-size="9" fill="#e8b84b" text-anchor="middle" letter-spacing="3">DESIGNER TILES</text></svg></div><div class="bc-body"><div class="bc-name" style="color:#fff">Imported Tiles</div><div class="bc-desc" style="color:rgba(255,255,255,0.45)">Exclusive tiles from Italy, Spain & Europe — for spaces that demand something truly extraordinary.</div><span class="bc-badge" style="color:#e8b84b;background:rgba(232,184,75,.1)">European Collection</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ WHY US ═══════════ -->
-<section class="section" style="background:var(--ink);padding-top:88px;padding-bottom:88px">
-  <div class="section-inner">
-    <div class="section-head reveal">
-      <div class="section-label" style="color:var(--gold-light)"><span style="background:var(--gold-light)"></span>Why Choose Us</div>
-      <h2 class="s-title" style="color:#fff">The Vaishali Traders <i style="color:var(--gold-light)">Difference</i></h2>
-    </div>
-    <div class="why-grid reveal">
-      <div class="why-card">
-        <div class="wc-icon">🏛️</div>
-        <div class="wc-n">35+</div>
-        <div class="wc-t">Years in Business</div>
-        <div class="wc-b">Est. 1989 — building lasting relationships with homeowners, architects, builders and interior designers across Jaipur and Rajasthan.</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-icon">👥</div>
-        <div class="wc-n">1L+</div>
-        <div class="wc-t">Satisfied Customers</div>
-        <div class="wc-b">Over 1,00,000 happy clients trust us. A client-first approach and expert guidance — from selection to installation.</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-icon">🏪</div>
-        <div class="wc-n">2</div>
-        <div class="wc-t">Experience Showrooms</div>
-        <div class="wc-b">Gopalpura Bypass and Vaishali Nagar — two fully stocked showrooms where you experience every product in person.</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-icon">💬</div>
-        <div class="wc-n">FREE</div>
-        <div class="wc-t">Consultation & Quotation</div>
-        <div class="wc-b">Expert team, zero obligations — we help plan and execute your dream space end-to-end, completely free of charge.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ CLIENTS ═══════════ -->
-<section id="clients" class="section">
-  <div class="section-inner">
-
-    <div class="clients-intro reveal">
-      <div class="clients-img">
-        <img src="https://images.unsplash.com/photo-1560185007-5f0bb1866cab?w=900&q=85" alt="Happy clients at our showroom">
-        <div class="clients-img-badge">
-          <div class="cib-icon">🤝</div>
-          <div>
-            <div class="cib-t">1 Lakh+ Happy Customers</div>
-            <div class="cib-s">Serving Jaipur since 1989</div>
-          </div>
+      <div class="prod-card">
+        <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7bc3?w=600&q=85" alt="Pipes">
+        <div class="prod-grad"></div>
+        <div class="prod-body">
+          <div class="prod-tag">Plumbing</div>
+          <div class="prod-name">CPVC &amp; PVC Pipes</div>
+          <div class="prod-brands">Astral · Ashirvad</div>
+          <div class="prod-arrow">View Range →</div>
         </div>
       </div>
-      <div class="clients-copy">
-        <div class="section-label">Our Valued Clients</div>
-        <h2 class="s-title">Trusted by<br>Jaipur's <i>Finest</i></h2>
-        <p class="s-desc">From individual homeowners designing their dream bathroom to Jaipur's most celebrated architects, builders and interior designers — Vaishali Traders has been the partner of choice for over 35 years.</p>
-        <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--body)">
-            <span style="width:22px;height:22px;border-radius:50%;background:var(--brand-pale);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</span>
-            Individual homeowners & families
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--body)">
-            <span style="width:22px;height:22px;border-radius:50%;background:var(--brand-pale);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</span>
-            Architects & interior designers
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--body)">
-            <span style="width:22px;height:22px;border-radius:50%;background:var(--brand-pale);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</span>
-            Real estate developers & builders
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--body)">
-            <span style="width:22px;height:22px;border-radius:50%;background:var(--brand-pale);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</span>
-            Hotels, resorts & commercial projects
-          </div>
+      <div class="prod-card">
+        <img src="https://images.unsplash.com/photo-1620626011761-9963d7521476?w=600&q=85" alt="Shower Enclosures">
+        <div class="prod-grad"></div>
+        <div class="prod-body">
+          <div class="prod-tag">Bathroom</div>
+          <div class="prod-name">Shower Enclosures</div>
+          <div class="prod-brands">Jaquar · Artize</div>
+          <div class="prod-arrow">View Range →</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=85" alt="Bath Accessories">
+        <div class="prod-grad"></div>
+        <div class="prod-body">
+          <div class="prod-tag">Bathroom</div>
+          <div class="prod-name">Bath Accessories</div>
+          <div class="prod-brands">Jaquar · Artize</div>
+          <div class="prod-arrow">View Range →</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <img src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=600&q=85" alt="Kitchen Sinks">
+        <div class="prod-grad"></div>
+        <div class="prod-body">
+          <div class="prod-tag">Kitchen</div>
+          <div class="prod-name">Kitchen Sinks</div>
+          <div class="prod-brands">Carysil · Nirali</div>
+          <div class="prod-arrow">View Range →</div>
         </div>
       </div>
     </div>
-
-    <!-- Client category tabs & cards -->
-    <div class="reveal">
-      <div class="client-tabs" id="ctabs">
-        <button class="ctab active" onclick="filterClients('all',this)">All Clients</button>
-        <button class="ctab" onclick="filterClients('homeowner',this)">Homeowners</button>
-        <button class="ctab" onclick="filterClients('architect',this)">Architects & Designers</button>
-        <button class="ctab" onclick="filterClients('builder',this)">Builders & Developers</button>
-        <button class="ctab" onclick="filterClients('hospitality',this)">Hospitality</button>
-      </div>
-
-      <div class="clients-grid" id="clients-grid">
-        <div class="client-card" data-type="homeowner">
-          <div class="cc-avatar">🏡</div>
-          <div class="cc-name">Sharma Family Residence</div>
-          <div class="cc-type">Homeowner · C-Scheme, Jaipur</div>
-          <div class="cc-desc">Complete bathroom renovation with Jaquar fittings and Qutone tiles. Transformed 3 bathrooms across a 4BHK home. The family chose us for our expert consultation and product variety.</div>
-          <span class="cc-tag">Complete Bath Renovation</span>
-        </div>
-        <div class="client-card" data-type="architect">
-          <div class="cc-avatar">📐</div>
-          <div class="cc-name">Studio Aranya</div>
-          <div class="cc-type">Interior Design Studio · Jaipur</div>
-          <div class="cc-desc">A premium interior design studio that has collaborated with us on 50+ residential and commercial projects across Jaipur — consistently choosing Artize and Jaquar for luxury fitouts.</div>
-          <span class="cc-tag">50+ Projects Together</span>
-        </div>
-        <div class="client-card" data-type="builder">
-          <div class="cc-avatar">🏗️</div>
-          <div class="cc-name">Mahima Infracon</div>
-          <div class="cc-type">Real Estate Developer · Jaipur</div>
-          <div class="cc-desc">One of Jaipur's leading real estate developers — supplying Jaquar and Essco fittings across multiple residential townships including their flagship Mahima Florencia project.</div>
-          <span class="cc-tag">Bulk Supply Partner</span>
-        </div>
-        <div class="client-card" data-type="hospitality">
-          <div class="cc-avatar">🏨</div>
-          <div class="cc-name">Hotel Clarks Amer</div>
-          <div class="cc-type">5-Star Hotel · Jaipur</div>
-          <div class="cc-desc">Full-scale renovation of guest bathrooms across 135 rooms, supplying premium Jaquar wellness solutions, tiles and lighting — delivered on tight deadlines with zero compromise on quality.</div>
-          <span class="cc-tag">135 Room Fitout</span>
-        </div>
-        <div class="client-card" data-type="homeowner">
-          <div class="cc-avatar">🏠</div>
-          <div class="cc-name">Gupta Villa Project</div>
-          <div class="cc-type">Homeowner · Vaishali Nagar, Jaipur</div>
-          <div class="cc-desc">Luxury home build featuring Artize premium faucets, Italian imported tiles, Jaquar whirlpool bath and steam unit. A flagship project that took 6 months to plan and execute to perfection.</div>
-          <span class="cc-tag">Luxury Fitout</span>
-        </div>
-        <div class="client-card" data-type="architect">
-          <div class="cc-avatar">✏️</div>
-          <div class="cc-name">Ar. Priya Mehta & Associates</div>
-          <div class="cc-type">Architect · Jaipur</div>
-          <div class="cc-desc">A celebrated Jaipur architect who specifies Vaishali Traders for all her residential projects — particularly valuing our imported tile collection and access to Jaquar's premium wellness range.</div>
-          <span class="cc-tag">Preferred Vendor</span>
-        </div>
-        <div class="client-card" data-type="builder">
-          <div class="cc-avatar">🏢</div>
-          <div class="cc-name">Anukampa Group</div>
-          <div class="cc-type">Developer · Jaipur</div>
-          <div class="cc-desc">Longstanding relationship spanning 10+ years — supplying Colston, Essco and Jaquar across Anukampa's entire residential portfolio in Jaipur, with bulk pricing and timely delivery.</div>
-          <span class="cc-tag">10+ Year Partnership</span>
-        </div>
-        <div class="client-card" data-type="hospitality">
-          <div class="cc-avatar">🍽️</div>
-          <div class="cc-name">Spice Court Restaurant</div>
-          <div class="cc-type">Commercial · Jaipur</div>
-          <div class="cc-desc">Complete fitout of washroom facilities including Jaquar sensor faucets, Qutone floor tiles and architectural lighting — designed to match the restaurant's premium heritage aesthetic.</div>
-          <span class="cc-tag">Commercial Fitout</span>
-        </div>
-        <div class="client-card" data-type="homeowner">
-          <div class="cc-avatar">🌟</div>
-          <div class="cc-name">Dr. Rajendra Singh</div>
-          <div class="cc-type">Homeowner · Vaishali Nagar, Jaipur</div>
-          <div class="cc-desc">"All staff here is very good and experienced. Thank you for suggesting the best items for my bathroom — very happy with the quality and service at Vaishali Traders."</div>
-          <span class="cc-tag">★★★★★ Review</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Testimonials -->
-    <div class="testimonials reveal">
-      <div class="test-label">What Our Clients Say</div>
-      <div class="test-grid">
-        <div class="test-card">
-          <div class="test-stars">★★★★★</div>
-          <p class="test-text">"All staff here is very good and experienced. Thank you for suggesting the best items for my bathroom — very happy with the service!"</p>
-          <div class="test-author">Dr. Rajendra Singh</div>
-          <div class="test-src">Jaquar Authorized Dealer Review · Vaishali Nagar</div>
-        </div>
-        <div class="test-card">
-          <div class="test-stars">★★★★★</div>
-          <p class="test-text">"Excellent service at Vaishali Traders — special thanks to Dilip for his prompt support and consistently helpful attitude throughout my project."</p>
-          <div class="test-author">Verified Customer</div>
-          <div class="test-src">Jaquar Authorized Dealer Review · Vaishali Nagar</div>
-        </div>
-        <div class="test-card">
-          <div class="test-stars">★★★★★</div>
-          <p class="test-text">"Very nice, helpful and friendly staff. No issues with supply or returns. A truly exclusive outlet for premium Jaquar sanitary products in Jaipur."</p>
-          <div class="test-author">Verified Customer</div>
-          <div class="test-src">Jaquar Authorized Dealer Review · Vaishali Nagar</div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -1289,6 +1079,111 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
   </div>
 </section>
 
+<!-- ═══════════ BRANDS ═══════════ -->
+<section id="brands" class="section">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="section-label">Authorized Partners</div>
+      <h2 class="s-title">Brands We <i>Carry</i></h2>
+      <p class="s-desc">Official authorized dealers of India's most trusted bath, tile and lighting brands — guaranteed genuine products with manufacturer warranty.</p>
+    </div>
+    <div class="brands-grid reveal">
+      <div class="brand-card"><div class="bc-logo"><img src="https://www.jaquar.com/Assets/Jaquar/images/logo.png" alt="Jaquar" style="height:40px"></div><div class="bc-body"><div class="bc-name">Jaquar</div><div class="bc-desc">India's No.1 complete bathroom & lighting brand. Present in 55+ countries — faucets, sanitaryware, showers, wellness & lighting.</div><span class="bc-badge">Authorized Dealer</span></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#fdf9f2"><img src="https://www.artize.com/Assets/Artize/images/logo.png" alt="Artize" style="height:35px"></div><div class="bc-body"><div class="bc-name">Artize</div><div class="bc-desc">Jaquar Group's luxury lifestyle brand — exquisite designer bath fittings for discerning, premium interiors.</div><span class="bc-badge">Authorized Dealer</span></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#f2f7fd"><img src="https://colstonconcepts.com/wp-content/uploads/2021/05/colston-logo.png" alt="Colston" style="height:30px"></div><div class="bc-body"><div class="bc-name">Colston</div><div class="bc-desc">Premium sanitaryware, bath fittings, whirlpool spas, steam & sauna — complete wellness solutions.</div><span class="bc-badge">Authorized Dealer</span></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#f4faf4"><img src="https://esscobathware.com/Assets/Essco/images/logo.png" alt="Essco" style="height:35px"></div><div class="bc-body"><div class="bc-name">Essco</div><div class="bc-desc">Quality faucets & sanitaryware for the value segment — functional, durable and budget-friendly.</div><span class="bc-badge">Authorized Dealer</span></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#fdf8ee"><img src="https://www.qutone.com/wp-content/uploads/2021/04/qutone-logo.png" alt="Qutone" style="height:35px"></div><div class="bc-body"><div class="bc-name">Qutone</div><div class="bc-desc">Designer floor & wall tiles — premium vitrified, ceramic and GVT tiles to transform any space.</div><span class="bc-badge">Tile Partner</span></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#f0f7fc"><img src="https://purever.in/wp-content/uploads/2021/06/purever-logo.png" alt="Purever" style="height:40px"></div><div class="bc-body"><div class="bc-name">Purever</div><div class="bc-desc">India's leading stainless steel overhead water tanks — hygienic, rust-proof and built to last.</div><span class="bc-badge">Authorized Dealer</span></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#f0f6fc"><div style="font-weight:900;font-size:32px;color:#0a5a9a">H₂O</div></div><div class="bc-body"><div class="bc-name">H2O &amp; Kingpure</div><div class="bc-desc">Premium SS water storage solutions in multiple capacities for residential and commercial projects.</div><span class="bc-badge">Authorized Dealer</span></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=400&q=80" alt="Imported Tiles" style="height:60px;width:100%;object-fit:cover;border-radius:4px"></div><div class="bc-body"><div class="bc-name">Imported Tiles</div><div class="bc-desc">Exclusive tiles from Italy, Spain & Europe — for spaces that demand something truly extraordinary.</div><span class="bc-badge">European Collection</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WHY US ═══════════ -->
+<section class="section" style="background:var(--ink);padding-top:88px;padding-bottom:88px">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="section-label" style="color:var(--gold-light)"><span style="background:var(--gold-light)"></span>Why Choose Us</div>
+      <h2 class="s-title" style="color:#fff">The Vaishali Traders <i style="color:var(--gold-light)">Difference</i></h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <div class="wc-icon">🏛️</div>
+        <div class="wc-n">37+</div>
+        <div class="wc-t">Years in Business</div>
+        <div class="wc-b">Est. 1989 — building lasting relationships with homeowners, architects, builders and interior designers across Jaipur and Rajasthan.</div>
+      </div>
+      <div class="why-card">
+        <div class="wc-icon">👥</div>
+        <div class="wc-n">1L+</div>
+        <div class="wc-t">Satisfied Customers</div>
+        <div class="wc-b">Over 1,00,000 happy clients trust us. A client-first approach and expert guidance — from selection to installation.</div>
+      </div>
+      <div class="why-card">
+        <div class="wc-icon">🏪</div>
+        <div class="wc-n">2</div>
+        <div class="wc-t">Experience Showrooms</div>
+        <div class="wc-b">Gopalpura Bypass and Vaishali Nagar — two fully stocked showrooms where you experience every product in person.</div>
+      </div>
+      <div class="why-card">
+        <div class="wc-icon">💬</div>
+        <div class="wc-n">FREE</div>
+        <div class="wc-t">Consultation & Quotation</div>
+        <div class="wc-b">Expert team, zero obligations — we help plan and execute your dream space end-to-end, completely free of charge.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CLIENTS ═══════════ -->
+<section id="clients" class="section">
+  <div class="section-inner">
+
+    <div class="clients-intro reveal">
+      <div class="clients-img">
+        <img src="https://images.unsplash.com/photo-1560185007-5f0bb1866cab?w=900&q=85" alt="Happy clients at our showroom">
+        <div class="clients-img-badge">
+          <div class="cib-icon">🤝</div>
+          <div>
+            <div class="cib-t">1 Lakh+ Happy Customers</div>
+            <div class="cib-s">Serving Jaipur since 1989</div>
+          </div>
+        </div>
+      </div>
+      <div class="clients-copy">
+        <div class="section-label">Our Valued Clients</div>
+        <h2 class="s-title">Trusted by<br>Jaipur's <i>Finest</i></h2>
+        <p class="s-desc">From individual homeowners designing their dream bathroom to Jaipur's most celebrated architects, builders and interior designers — Vaishali Traders has been the partner of choice for over 35 years.</p>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--body)">
+            <span style="width:22px;height:22px;border-radius:50%;background:var(--brand-pale);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</span>
+            Individual homeowners & families
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--body)">
+            <span style="width:22px;height:22px;border-radius:50%;background:var(--brand-pale);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</span>
+            Architects & interior designers
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--body)">
+            <span style="width:22px;height:22px;border-radius:50%;background:var(--brand-pale);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</span>
+            Real estate developers & builders
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--body)">
+            <span style="width:22px;height:22px;border-radius:50%;background:var(--brand-pale);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</span>
+            Hotels, resorts & commercial projects
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Client category tabs & cards -->
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+
 <!-- ═══════════ SHOWROOM ═══════════ -->
 <div id="showroom" class="showroom-wrap">
   <div class="sw-photo">
@@ -1320,38 +1215,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
 </div>
 
 <!-- ═══════════ CATALOGUES ═══════════ -->
-<section id="catalogues" class="section">
-  <div class="section-inner">
-    <div class="section-head reveal">
-      <div class="section-label">Product Literature</div>
-      <h2 class="s-title">Download &amp; <i>Explore</i></h2>
-      <p class="s-desc">Browse and download our full range of catalogues — share with your architect, designer or builder.</p>
-    </div>
-    <div class="filter-bar reveal">
-      <button class="fb active" onclick="fc('all',this)">All</button>
-      <button class="fb" onclick="fc('faucets',this)">Faucets</button>
-      <button class="fb" onclick="fc('sanitary',this)">Sanitaryware</button>
-      <button class="fb" onclick="fc('tiles',this)">Tiles</button>
-      <button class="fb" onclick="fc('lighting',this)">Lighting</button>
-      <button class="fb" onclick="fc('wellness',this)">Wellness</button>
-      <button class="fb" onclick="fc('tanks',this)">Water Tanks</button>
-    </div>
-    <div class="cat-grid reveal" id="cg">
-      <div class="cat-card" data-cat="faucets"><div class="cat-thumb" style="background:linear-gradient(135deg,#ddeaf4,#b8d4e8)">🚰</div><div class="cat-body"><div class="cat-brand">Jaquar</div><div class="cat-name">Faucets &amp; Showers</div><div class="cat-meta">Complete bath fittings range</div><button class="dl-btn" onclick="st()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF</button></div></div>
-      <div class="cat-card" data-cat="faucets"><div class="cat-thumb" style="background:linear-gradient(135deg,#f0ebe0,#e0d0b0)">✨</div><div class="cat-body"><div class="cat-brand">Artize</div><div class="cat-name">Luxury Bath Fittings</div><div class="cat-meta">Premium &amp; designer collection</div><button class="dl-btn" onclick="st()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF</button></div></div>
-      <div class="cat-card" data-cat="sanitary"><div class="cat-thumb" style="background:linear-gradient(135deg,#edeaf5,#d5cfe8)">🛁</div><div class="cat-body"><div class="cat-brand">Jaquar</div><div class="cat-name">Sanitaryware Catalogue</div><div class="cat-meta">WC, basins, cisterns &amp; more</div><button class="dl-btn" onclick="st()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF</button></div></div>
-      <div class="cat-card" data-cat="sanitary"><div class="cat-thumb" style="background:linear-gradient(135deg,#eee8f0,#d4c8e4)">🚿</div><div class="cat-body"><div class="cat-brand">Colston</div><div class="cat-name">Bath Collection</div><div class="cat-meta">Sanitaryware &amp; accessories</div><button class="dl-btn" onclick="st()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF</button></div></div>
-      <div class="cat-card" data-cat="tiles"><div class="cat-thumb" style="background:linear-gradient(135deg,#f5f0e0,#e8dfc8)">⬜</div><div class="cat-body"><div class="cat-brand">Qutone</div><div class="cat-name">Floor &amp; Wall Tiles</div><div class="cat-meta">Vitrified, ceramic &amp; GVT</div><button class="dl-btn" onclick="st()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF</button></div></div>
-      <div class="cat-card" data-cat="tiles"><div class="cat-thumb" style="background:linear-gradient(135deg,#e8e0f0,#d0c4e4)">🌍</div><div class="cat-body"><div class="cat-brand">Imported</div><div class="cat-name">European Designer Tiles</div><div class="cat-meta">Italy, Spain &amp; premium imports</div><button class="dl-btn" onclick="st()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF</button></div></div>
-      <div class="cat-card" data-cat="lighting"><div class="cat-thumb" style="background:linear-gradient(135deg,#fdf8e8,#f0e8c0)">💡</div><div class="cat-body"><div class="cat-brand">Jaquar Lights</div><div class="cat-name">Lighting Catalogue</div><div class="cat-meta">LED, decorative &amp; architectural</div><button class="dl-btn" onclick="st()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF</button></div></div>
-      <div class="cat-card" data-cat="wellness"><div class="cat-thumb" style="background:linear-gradient(135deg,#d4edf8,#a8d4ec)">🌊</div><div class="cat-body"><div class="cat-brand">Jaquar · Colston</div><div class="cat-name">Wellness &amp; Spa</div><div class="cat-meta">Whirlpool, spa, steam &amp; sauna</div><button class="dl-btn" onclick="st()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF</button></div></div>
-      <div class="cat-card" data-cat="tanks"><div class="cat-thumb" style="background:linear-gradient(135deg,#e0eef8,#b8d4ee)">🪣</div><div class="cat-body"><div class="cat-brand">Purever · H2O · Kingpure</div><div class="cat-name">SS Water Tanks</div><div class="cat-meta">Stainless steel overhead tanks</div><button class="dl-btn" onclick="st()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF</button></div></div>
-      <div class="cat-card" data-cat="faucets"><div class="cat-thumb" style="background:linear-gradient(135deg,#eaf4e8,#c8e4c0)">🔧</div><div class="cat-body"><div class="cat-brand">Essco</div><div class="cat-name">Essco Value Range</div><div class="cat-meta">Affordable quality faucets</div><button class="dl-btn" onclick="st()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF</button></div></div>
-      <div class="cat-card" data-cat="sanitary"><div class="cat-thumb" style="background:linear-gradient(135deg,#f8e8e0,#eec4b0)">🪥</div><div class="cat-body"><div class="cat-brand">Jaquar</div><div class="cat-name">Bath Accessories</div><div class="cat-meta">Towel rails, holders &amp; more</div><button class="dl-btn" onclick="st()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF</button></div></div>
-      <div class="cat-card" data-cat="wellness"><div class="cat-thumb" style="background:linear-gradient(135deg,#e4f0e4,#c0dcc0)">♨️</div><div class="cat-body"><div class="cat-brand">Jaquar · Colston</div><div class="cat-name">Steam &amp; Sauna Guide</div><div class="cat-meta">Steam bath &amp; sauna solutions</div><button class="dl-btn" onclick="st()"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download PDF</button></div></div>
-    </div>
-  </div>
-</section>
+
 
 
 <!-- ═══════════ FOOTER ═══════════ -->
@@ -1373,7 +1237,6 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
         <li><a href="#products">Tiles</a></li>
         <li><a href="#products">Lighting</a></li>
         <li><a href="#products">Whirlpool &amp; Spas</a></li>
-        <li><a href="#products">Steam &amp; Sauna</a></li>
         <li><a href="#products">SS Overhead Tanks</a></li>
         <li><a href="#products">CPVC &amp; PVC</a></li>
       </ul></div>
@@ -1391,7 +1254,6 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
         <li><a href="#clients">Our Clients</a></li>
         <li><a href="#livspace">Livspace Kitchen</a></li>
         <li><a href="#showroom">Visit Showroom</a></li>
-        <li><a href="#catalogues">Download Catalogues</a></li>
         <li><a href="#showroom">Free Consultation</a></li>
         <li><a href="#showroom">Get a Quote</a></li>
       </ul>
@@ -1408,7 +1270,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
   </div>
 </footer>
 
-<div id="toast">✅ &nbsp;Catalogue ready! Replace onclick with your PDF link to activate.</div>
+
 
 <script>
 // Nav scroll
@@ -1431,30 +1293,7 @@ const obs=new IntersectionObserver(es=>es.forEach((e,i)=>{
 }),{threshold:0.06});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-// Catalogue filter
-function fc(cat,btn){
-  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.cat-card').forEach(c=>{
-    c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';
-  });
-}
 
-// Client filter
-function filterClients(type,btn){
-  document.querySelectorAll('.ctab').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.client-card').forEach(c=>{
-    c.style.display=(type==='all'||c.dataset.type===type)?'':'none';
-  });
-}
-
-// Toast
-function st(){
-  const t=document.getElementById('toast');
-  t.style.transform='translateY(0)';t.style.opacity='1';
-  setTimeout(()=>{t.style.transform='translateY(80px)';t.style.opacity='0'},3500);
-}
 </script>
 </body>
 </html>
