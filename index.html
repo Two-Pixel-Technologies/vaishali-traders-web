@@ -56,12 +56,12 @@ a{text-decoration:none;color:inherit}
 .nav-logo{display:flex;align-items:center;gap:12px}
 .nav-logo img{height:40px;width:auto}
 .nav-logo-copy{display:flex;flex-direction:column;gap:1px}
-.nav-logo-name{font-size:15.5px;font-weight:800;color:var(--brand);letter-spacing:.01em}
+.nav-logo-name{font-size:15.5px;font-weight:800;color:var(--brand);letter-spacing:.01em;line-height:1.2}
 .nav-logo-sub{font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .nav-links{display:flex;list-style:none;gap:2px}
 .nav-links a{
   padding:8px 16px;border-radius:8px;
-  font-size:13px;font-weight:500;color:var(--body);
+  font-size:15px;font-weight:500;color:var(--body);
   transition:background .18s,color .18s;
 }
 .nav-links a:hover{background:var(--surface);color:var(--brand)}
@@ -101,12 +101,12 @@ a{text-decoration:none;color:inherit}
    HERO — THE WOW FACTOR: Fullscreen split with floating card
 ──────────────────────────────────────────────────────── */
 .hero{
-  height:100vh;padding-top:var(--nav-h);
+  height:100vh;padding-top:45px;
   display:grid;grid-template-columns:52% 48%;
   overflow:hidden;
 }
 .hero-l{
-  display:flex;flex-direction:column;justify-content:center;
+  display:flex;flex-direction:column;justify-content:space-between;
   padding:40px 64px 40px 80px;
   background:var(--white);
   position:relative;
@@ -117,7 +117,7 @@ a{text-decoration:none;color:inherit}
   background:var(--brand-pale);
   border:1px solid rgba(30,64,128,.15);
   padding:6px 14px 6px 8px;border-radius:40px;
-  margin-bottom:32px;width:fit-content;
+  margin-bottom:0;width:fit-content;
 }
 .hero-pill-dot{
   width:28px;height:28px;border-radius:50%;
@@ -125,18 +125,21 @@ a{text-decoration:none;color:inherit}
   font-size:13px;flex-shrink:0;
 }
 .hero-pill span{font-size:11.5px;font-weight:600;color:var(--brand);letter-spacing:.02em}
+
+.hero-m{ margin: auto 0; }
+
 .hero h1{
   font-family:'DM Serif Display',serif;
-  font-size:clamp(44px,4.8vw,72px);line-height:1.07;
-  color:var(--ink);margin-bottom:24px;
+  font-size:clamp(38px,4vw,62px);line-height:1.07;
+  color:var(--ink);margin-bottom:12px;
   letter-spacing:-.02em;
 }
 .hero h1 i{color:var(--brand);font-style:italic}
 .hero-sub{
-  font-size:16px;font-weight:400;line-height:1.75;color:var(--body);
-  max-width:440px;margin-bottom:44px;
+  font-size:15px;font-weight:400;line-height:1.6;color:var(--body);
+  max-width:440px;margin-bottom:24px;
 }
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:56px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:0}
 .btn-primary{
   background:var(--brand);color:#fff;
   padding:14px 28px;border-radius:40px;
@@ -154,13 +157,25 @@ a{text-decoration:none;color:inherit}
 }
 .btn-secondary:hover{border-color:var(--brand);background:var(--brand-pale);color:var(--brand)}
 .hero-stats{
-  display:flex;gap:0;
-  padding-top:36px;border-top:1px solid var(--border);
+  display:flex;align-items:center;
+  margin-top:0;
+  padding:20px 0;
+  border-top:1px solid var(--border);
 }
-.hstat{padding:0 36px 0 0;margin-right:36px;border-right:1px solid var(--border)}
-.hstat:last-child{border:none;margin:0;padding:0}
-.hstat-n{font-family:'DM Serif Display',serif;font-size:36px;color:var(--brand);line-height:1}
-.hstat-l{font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+.hstat{
+  padding:0 32px;
+  border-right:1px solid var(--border);
+}
+.hstat:first-child{padding-left:0}
+.hstat:last-child{border:none}
+.hstat-n{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:38px;font-weight:700;color:var(--brand);line-height:1;
+}
+.hstat-l{
+  font-size:11px;font-weight:600;color:var(--muted);
+  letter-spacing:.1em;text-transform:uppercase;margin-top:6px;
+}
 
 .hero-r{
   position:relative;overflow:hidden;
@@ -214,7 +229,7 @@ a{text-decoration:none;color:inherit}
 /* ────────────────────────────────────────────────────────
    GENERIC SECTION LAYOUT
 ──────────────────────────────────────────────────────── */
-.section{padding:96px 40px}
+.section{padding:50px 40px}
 .section-inner{max-width:var(--max);margin:0 auto}
 .section-head{margin-bottom:56px}
 .section-label{
@@ -254,7 +269,10 @@ h2.s-title i{font-style:italic;color:var(--brand)}
 .prod-card:nth-child(5){grid-column:span 5}
 .prod-card:nth-child(6){grid-column:span 4}
 .prod-card:nth-child(7){grid-column:span 3}
-.prod-card:nth-child(8),.prod-card:nth-child(9),.prod-card:nth-child(10),.prod-card:nth-child(11){grid-column:span 3}
+.prod-card:nth-child(8){grid-column:span 7}
+.prod-card:nth-child(9){grid-column:span 5;grid-row:span 2}
+.prod-card:nth-child(10){grid-column:span 3}
+.prod-card:nth-child(11){grid-column:span 4}
 .prod-card img{
   width:100%;height:100%;object-fit:cover;
   transition:transform .6s ease,filter .4s;
@@ -481,7 +499,7 @@ h2.s-title i{font-style:italic;color:var(--brand)}
 /* ────────────────────────────────────────────────────────
    SHOWROOM
 ──────────────────────────────────────────────────────── */
-#showroom{padding:0;background:var(--white)}
+#showroom{padding:0 ;background:var(--white)}
 .showroom-wrap{
   display:grid;grid-template-columns:1fr 1fr;
   min-height:640px;
@@ -498,7 +516,7 @@ h2.s-title i{font-style:italic;color:var(--brand)}
   background:linear-gradient(135deg,rgba(30,64,128,.4) 0%,transparent 60%);
 }
 .sw-content{
-  padding:80px 64px;
+  padding:40px 50px;
   display:flex;flex-direction:column;justify-content:center;
   background:var(--surface);
 }
@@ -731,24 +749,24 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
   .ls-content{padding:52px 32px}
   .ls-feature-cards{flex-direction:row;flex-wrap:wrap;gap:8px}
   .ls-feat{flex:1;min-width:140px}
-  .nav-inner{padding:0 24px}
-  .nav-links,.nav-phone{display:none}
+  .nav-inner{padding:0 20px}
+  .nav-links,.nav-phone,.nav-cta{display:none}
   .ham{display:flex}
   .mob{display:flex}
-  .hero{grid-template-columns:1fr}
-  .hero-l{padding:52px 32px 64px}
+  .hero{grid-template-columns:1fr;height:auto;min-height:100vh}
+  .hero-l{padding:40px 20px 48px;height:auto;min-height:calc(100vh - var(--nav-h))}
   .hero-r{height:360px}
   .hero-float-card{display:none}
   .hero-brand-badge{bottom:16px;right:16px}
   .hero-stats{flex-wrap:wrap;gap:20px}
   .hstat{border:none;padding:0;margin:0}
   .section{padding:64px 24px}
-  .prod-grid{grid-template-columns:1fr 1fr;grid-auto-rows:220px}
+  .prod-grid{grid-template-columns:1fr 1fr;grid-auto-rows:200px}
   .prod-card:nth-child(1){grid-column:span 2;grid-row:span 1}
   .prod-card:nth-child(2){grid-column:span 2}
   .prod-card:nth-child(3),.prod-card:nth-child(4){grid-column:span 1}
   .prod-card:nth-child(5),.prod-card:nth-child(6){grid-column:span 1}
-  .prod-card:nth-child(7),.prod-card:nth-child(8),.prod-card:nth-child(9),.prod-card:nth-child(10),.prod-card:nth-child(11){grid-column:span 2}
+  .prod-card:nth-child(7),.prod-card:nth-child(8),.prod-card:nth-child(9),.prod-card:nth-child(10),.prod-card:nth-child(11){grid-column:span 2;grid-row:span 1}
   .brands-grid{grid-template-columns:1fr 1fr}
   .why-grid{grid-template-columns:1fr 1fr}
   .clients-intro{grid-template-columns:1fr}
@@ -766,14 +784,14 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
   .ls-cta-row{flex-direction:column}
   .btn-livspace,.btn-ls-ghost{text-align:center;width:100%}
   .ls-content{padding:40px 20px}
-  .hero h1{font-size:clamp(38px,10vw,52px)}
-  .hero-l{padding:40px 20px 52px}
+  .hero h1{font-size:clamp(32px,10vw,46px)}
+  .hero-l{padding:40px 20px 48px}
   .hero-btns{flex-direction:column}
   .btn-primary,.btn-secondary{justify-content:center;width:100%}
   .prod-grid{grid-template-columns:1fr;grid-auto-rows:auto}
-  .prod-card{aspect-ratio:4/3}
-  .prod-card:nth-child(1),.prod-card:nth-child(2),.prod-card:nth-child(7),.prod-card:nth-child(8),.prod-card:nth-child(9),.prod-card:nth-child(10),.prod-card:nth-child(11){grid-column:span 1}
+  .prod-card{aspect-ratio:4/3;grid-column:span 1 !important;grid-row:span 1 !important}
   .brands-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .brand-card img{max-height:80px;width:auto;object-fit:contain}
   .why-grid{grid-template-columns:1fr}
   .why-card{border-bottom:1px solid rgba(255,255,255,.07)}
   .clients-grid{grid-template-columns:1fr}
@@ -836,21 +854,23 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
       <div class="hero-pill-dot">🏆</div>
       <span>Jaipur's No.1 Bath & Lighting Destination</span>
     </div>
-    <h1>Where Spaces<br>Become <i>Beautiful</i><br>Experiences</h1>
-    <p class="hero-sub">Your one-stop showroom for premium bathroom fittings, designer tiles and architectural lighting. Authorized dealers of Jaquar, Artize, Colston & more — trusted by 1 lakh+ customers since 1989.</p>
-    <div class="hero-btns">
-      <a href="#products" class="btn-primary">
-        Explore Products
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="https://wa.me/911234567890" class="btn-secondary" target="_blank">
-        Contact Us
-      </a>
-    </div>
+      <div class="hero-m">
+        <h1>Where Spaces<br>Become <i>Beautiful</i><br>Experiences</h1>
+        <p class="hero-sub">Your one-stop showroom for premium bathroom fittings, designer tiles and architectural lighting. Authorized dealers of Jaquar, Artize, Colston & more — trusted by 1 lakh+ customers since 1989.</p>
+        <div class="hero-btns">
+          <a href="#products" class="btn-primary">
+            Explore Products
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+919587999947" class="btn-secondary" target="_blank">
+            Contact Us
+          </a>
+        </div>
+      </div>
     <div class="hero-stats">
-      <div class="hstat"><div class="hstat-n">37+</div><div class="hstat-l">Years Est.</div></div>
-      <div class="hstat"><div class="hstat-n">1L+</div><div class="hstat-l">Customers</div></div>
-      <div class="hstat"><div class="hstat-n">2</div><div class="hstat-l">Showrooms</div></div>
+      <div class="hstat"><div class="hstat-n">37+</div><div class="hstat-l">YEARS EST.</div></div>
+      <div class="hstat"><div class="hstat-n">1L+</div><div class="hstat-l">CUSTOMERS</div></div>
+      <div class="hstat"><div class="hstat-n">2</div><div class="hstat-l">SHOWROOMS</div></div>
     </div>
   </div>
   <div class="hero-r">
@@ -950,7 +970,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
         </div>
       </div>
       <div class="prod-card">
-        <img src="https://images.unsplash.com/photo-1585136813144-38fc71f0088b?w=600&q=85" alt="Heat Pumps">
+        <img src="images/geyser.png" alt="Heat Pumps">
         <div class="prod-grad"></div>
         <div class="prod-body">
           <div class="prod-tag">Hot Water</div>
@@ -970,7 +990,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
         </div>
       </div>
       <div class="prod-card">
-        <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7bc3?w=600&q=85" alt="Pipes">
+        <img src="images/pvc.png" alt="Pipes">
         <div class="prod-grad"></div>
         <div class="prod-body">
           <div class="prod-tag">Plumbing</div>
@@ -980,7 +1000,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
         </div>
       </div>
       <div class="prod-card">
-        <img src="https://images.unsplash.com/photo-1620626011761-9963d7521476?w=600&q=85" alt="Shower Enclosures">
+        <img src="images/shower.png" alt="Shower Enclosures">
         <div class="prod-grad"></div>
         <div class="prod-body">
           <div class="prod-tag">Bathroom</div>
@@ -1088,12 +1108,12 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
       <p class="s-desc">Official authorized dealers of India's most trusted bath, tile and lighting brands — guaranteed genuine products with manufacturer warranty.</p>
     </div>
     <div class="brands-grid reveal">
-      <div class="brand-card"><div class="bc-logo"><img src="https://www.jaquar.com/Assets/Jaquar/images/logo.png" alt="Jaquar" style="height:40px"></div><div class="bc-body"><div class="bc-name">Jaquar</div><div class="bc-desc">India's No.1 complete bathroom & lighting brand. Present in 55+ countries — faucets, sanitaryware, showers, wellness & lighting.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#fdf9f2"><img src="https://www.artize.com/Assets/Artize/images/logo.png" alt="Artize" style="height:35px"></div><div class="bc-body"><div class="bc-name">Artize</div><div class="bc-desc">Jaquar Group's luxury lifestyle brand — exquisite designer bath fittings for discerning, premium interiors.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f2f7fd"><img src="https://colstonconcepts.com/wp-content/uploads/2021/05/colston-logo.png" alt="Colston" style="height:30px"></div><div class="bc-body"><div class="bc-name">Colston</div><div class="bc-desc">Premium sanitaryware, bath fittings, whirlpool spas, steam & sauna — complete wellness solutions.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f4faf4"><img src="https://esscobathware.com/Assets/Essco/images/logo.png" alt="Essco" style="height:35px"></div><div class="bc-body"><div class="bc-name">Essco</div><div class="bc-desc">Quality faucets & sanitaryware for the value segment — functional, durable and budget-friendly.</div><span class="bc-badge">Authorized Dealer</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#fdf8ee"><img src="https://www.qutone.com/wp-content/uploads/2021/04/qutone-logo.png" alt="Qutone" style="height:35px"></div><div class="bc-body"><div class="bc-name">Qutone</div><div class="bc-desc">Designer floor & wall tiles — premium vitrified, ceramic and GVT tiles to transform any space.</div><span class="bc-badge">Tile Partner</span></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f0f7fc"><img src="https://purever.in/wp-content/uploads/2021/06/purever-logo.png" alt="Purever" style="height:40px"></div><div class="bc-body"><div class="bc-name">Purever</div><div class="bc-desc">India's leading stainless steel overhead water tanks — hygienic, rust-proof and built to last.</div><span class="bc-badge">Authorized Dealer</span></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/jaguar2.png" alt="Jaquar" style="height:150px"></div><div class="bc-body"><div class="bc-name">Jaquar</div><div class="bc-desc">India's No.1 complete bathroom & lighting brand. Present in 55+ countries — faucets, sanitaryware, showers, wellness & lighting.</div><span class="bc-badge">Authorized Dealer</span></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#fdf9f2"><img src="images/artize.jpg" alt="Artize" style="height:150px"></div><div class="bc-body"><div class="bc-name">Artize</div><div class="bc-desc">Jaquar Group's luxury lifestyle brand — exquisite designer bath fittings for discerning, premium interiors.</div><span class="bc-badge">Authorized Dealer</span></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#f2f7fd"><img src="images/colston1.png" alt="Colston" style="height:60px"></div><div class="bc-body"><div class="bc-name">Colston</div><div class="bc-desc">Premium sanitaryware, bath fittings, whirlpool spas, steam & sauna — complete wellness solutions.</div><span class="bc-badge">Authorized Dealer</span></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#f4faf4"><img src="images/essco1.png" alt="Essco" style="height:70px", width="200px"></div><div class="bc-body"><div class="bc-name">Essco</div><div class="bc-desc">Quality faucets & sanitaryware for the value segment — functional, durable and budget-friendly.</div><span class="bc-badge">Authorized Dealer</span></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#fdf8ee"><img src="images/qutone.png" alt="Qutone" style="height:100px"></div><div class="bc-body"><div class="bc-name">Qutone</div><div class="bc-desc">Designer floor & wall tiles — premium vitrified, ceramic and GVT tiles to transform any space.</div><span class="bc-badge">Tile Partner</span></div></div>
+      <div class="brand-card"><div class="bc-logo" style="background:#f0f7fc"><img src="images/purever.png" alt="Purever" style="height:150px", width="225px"></div><div class="bc-body"><div class="bc-name">Purever</div><div class="bc-desc">India's leading stainless steel overhead water tanks — hygienic, rust-proof and built to last.</div><span class="bc-badge">Authorized Dealer</span></div></div>
       <div class="brand-card"><div class="bc-logo" style="background:#f0f6fc"><div style="font-weight:900;font-size:32px;color:#0a5a9a">H₂O</div></div><div class="bc-body"><div class="bc-name">H2O &amp; Kingpure</div><div class="bc-desc">Premium SS water storage solutions in multiple capacities for residential and commercial projects.</div><span class="bc-badge">Authorized Dealer</span></div></div>
       <div class="brand-card"><div class="bc-logo"><img src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=400&q=80" alt="Imported Tiles" style="height:60px;width:100%;object-fit:cover;border-radius:4px"></div><div class="bc-body"><div class="bc-name">Imported Tiles</div><div class="bc-desc">Exclusive tiles from Italy, Spain & Europe — for spaces that demand something truly extraordinary.</div><span class="bc-badge">European Collection</span></div></div>
     </div>
