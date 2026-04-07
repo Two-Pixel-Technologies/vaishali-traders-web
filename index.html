@@ -337,14 +337,18 @@ h2.s-title i{font-style:italic;color:var(--brand)}
   border-color:var(--brand);
 }
 .bc-logo{
-  height:150px;display:flex;align-items:center;justify-content:center;
+  height:160px;display:flex;align-items:center;justify-content:center;
   padding:0 15px;border-bottom:1px solid var(--border);
 }
 .bc-logo img{max-height:100%;max-width:100%;object-fit:contain;mix-blend-mode:multiply}
 .bc-body{padding:18px 20px 22px}
 .bc-name{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:5px}
 .bc-desc{font-size:12px;line-height:1.7;color:var(--body)}
-
+.brand-logo-livespace{max-width:150px; max-height:64px;}
+.brand-logo-grundfos{
+  max-width:180px; 
+  max-height:80px;}
+.brand-logo-sunstellar{max-width:150px; max-height:64px;}
 
 /* ────────────────────────────────────────────────────────
    WHY US
@@ -392,7 +396,7 @@ h2.s-title i{font-style:italic;color:var(--brand)}
 }
 .clients-intro:hover .clients-img img{transform:scale(1.04)}
 .clients-img-badge{
-  position:absolute;bottom:20px;left:20px;right:20px;
+  position:absolute;bottom:10px;left:10px;right:10px;
   background:rgba(255,255,255,.95);backdrop-filter:blur(16px);
   border-radius:12px;padding:16px 20px;
   display:flex;align-items:center;gap:14px;
@@ -1133,174 +1137,957 @@ footer{background:var(--ink);color:rgba(255,255,255,.4);padding:72px 40px 32px}
 
 
 <!-- ═══════════ BRANDS ═══════════ -->
+<style>
+/* updated: brands section only */
+#brands{background:var(--surface)}
+#brands .section-head{margin-bottom:32px}
+#brands .brands-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+#brands .brand-card{
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:var(--radius);
+  min-height:140px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px 20px;
+  transition:box-shadow .25s,transform .25s,border-color .25s;
+}
+#brands .brand-card:hover{
+  box-shadow:var(--shadow-md);
+  transform:translateY(-4px);
+  border-color:var(--brand);
+}
+#brands .bc-logo{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent !important;
+}
+#brands .bc-logo img{
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  mix-blend-mode:normal;
+  filter:none;
+}
+/* editable individual logo sizing */
+.brand-logo-jaquar{max-width:150px;max-height:64px}
+.brand-logo-artize{max-width:170px;max-height:60px}
+.brand-logo-colston{max-width:145px;max-height:56px}
+.brand-logo-essco{max-width:140px;max-height:56px}
+.brand-logo-qutone{max-width:150px;max-height:56px}
+.brand-logo-purever{max-width:175px;max-height:60px}
+.brand-logo-imported{max-width:165px;max-height:64px}
+@media (max-width:1024px){
+  #brands .brands-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:768px){
+  #brands .brands-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  #brands .brand-card{min-height:120px;padding:20px 16px}
+}
+</style>
 <section id="brands" class="section">
   <div class="section-inner">
     <div class="section-head reveal">
       <div class="section-label">Authorized Partners</div>
       <h2 class="s-title">Brands We <i>Carry</i></h2>
-      <p class="s-desc">Official authorized dealers of India's most trusted bath, tile and lighting brands — guaranteed genuine products with manufacturer warranty.</p>
     </div>
     <div class="brands-grid reveal">
-      <div class="brand-card"><div class="bc-logo"><img src="images/jaguar2.png" alt="Jaquar" style="width: 240px; height: auto;"></div><div class="bc-body"><div class="bc-name">Jaquar</div><div class="bc-desc">India's No.1 complete bathroom & lighting brand. Present in 55+ countries — faucets, sanitaryware, showers, wellness & lighting.</div></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#fdf9f2"><img src="images/artize.jpg" alt="Artize" style="width: 320px; height: auto; object-fit: contain;"></div><div class="bc-body"><div class="bc-name">Artize</div><div class="bc-desc">Jaquar Group's luxury lifestyle brand — exquisite designer bath fittings for discerning, premium interiors.</div></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f2f7fd"><img src="images/colston1.png" alt="Colston" style="width: 200px; height: auto;"></div><div class="bc-body"><div class="bc-name">Colston</div><div class="bc-desc">Premium sanitaryware, bath fittings, whirlpool spas, steam & sauna — complete wellness solutions.</div></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f4faf4"><img src="images/essco1.png" alt="Essco" style="width: 200px; height: auto;"></div><div class="bc-body"><div class="bc-name">Essco</div><div class="bc-desc">Quality faucets & sanitaryware for the value segment — functional, durable and budget-friendly.</div></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#fdf8ee"><img src="images/qutone.png" alt="Qutone" style="width: 200px; height: auto;"></div><div class="bc-body"><div class="bc-name">Qutone</div><div class="bc-desc">Designer floor & wall tiles — premium vitrified, ceramic and GVT tiles to transform any space.</div></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f0f7fc"><img src="images/purever1.jpg" alt="Purever" style="width: 550px; height: auto; max-height: 120px; object-fit: contain;"></div><div class="bc-body"><div class="bc-name">Purever</div><div class="bc-desc">India's leading stainless steel overhead water tanks — hygienic, rust-proof and built to last.</div></div></div>
-      <div class="brand-card"><div class="bc-logo" style="background:#f0f6fc"><div style="font-weight:900;font-size:45px;color:#0a5a9a">H₂O</div></div><div class="bc-body"><div class="bc-name">H2O &amp; Kingpure</div><div class="bc-desc">Premium SS water storage solutions in multiple capacities for residential and commercial projects.</div></div></div>
-      <div class="brand-card"><div class="bc-logo"><img src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?w=400&q=80" alt="Imported Tiles" style="width: 100%; height: 100px; object-fit: cover; border-radius: 4px;"></div><div class="bc-body"><div class="bc-name">Imported Tiles</div><div class="bc-desc">Exclusive tiles from Italy, Spain & Europe — for spaces that demand something truly extraordinary.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ WHY US ═══════════ -->
-<section class="section" style="background:var(--ink);padding-top:88px;padding-bottom:88px">
-  <div class="section-inner">
-    <div class="section-head reveal">
-      <div class="section-label" style="color:var(--gold-light)"><span style="background:var(--gold-light)"></span>Why Choose Us</div>
-      <h2 class="s-title" style="color:#fff">The Vaishali Traders <i style="color:var(--gold-light)">Difference</i></h2>
-    </div>
-    <div class="why-grid reveal">
-      <div class="why-card">
-        <div class="wc-icon">🏛️</div>
-        <div class="wc-n">37+</div>
-        <div class="wc-t">Years in Business</div>
-        <div class="wc-b">Est. 1989 — building lasting relationships with homeowners, architects, builders and interior designers across Jaipur and Rajasthan.</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-icon">👥</div>
-        <div class="wc-n">1L+</div>
-        <div class="wc-t">Satisfied Customers</div>
-        <div class="wc-b">Over 1,00,000 happy clients trust us. A client-first approach and expert guidance — from selection to installation.</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-icon">🏪</div>
-        <div class="wc-n">2</div>
-        <div class="wc-t">Experience Showrooms</div>
-        <div class="wc-b">Gopalpura Bypass and Vaishali Nagar — two fully stocked showrooms where you experience every product in person.</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-icon">💬</div>
-        <div class="wc-n">FREE</div>
-        <div class="wc-t">Consultation & Quotation</div>
-        <div class="wc-b">Expert team, zero obligations — we help plan and execute your dream space end-to-end, completely free of charge.</div>
-      </div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/jaquar logo.png" alt="Jaquar" class="brand-logo-jaquar"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/artize logo.jpg" alt="Artize" class="brand-logo-artize"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/colston logo.png" alt="Colston" class="brand-logo-colston"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/essco1.png" alt="Essco" class="brand-logo-essco"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/qutone logo.png" alt="Qutone" class="brand-logo-qutone"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/astral1.png" alt="Asrtral" class="brand-logo-purever"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/carysil logo.png" alt="Carysil" class="brand-logo-imported"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/crompton1.png" alt="Crompton" class="brand-logo-imported"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/franke logo.png" alt="Fränke" class="brand-logo-imported"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/kirloskar logo.png" alt="Kirloskar" class="brand-logo-imported"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/prince logo.jpg" alt="Prince" class="brand-logo-imported"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/roff logo.png" alt="Roff" class="brand-logo-imported"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/sunstellar logo.png" alt="Sunstellar" class="brand-logo-sunstellar"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/viking logo.png" alt="Viking" class="brand-logo-imported"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/livspace logo.png" alt="Livspace" class="brand-logo-livespace"></div></div>
+      <div class="brand-card"><div class="bc-logo"><img src="images/brands/grundfos logo.png" alt="Grundfos" class="brand-logo-grundfos"></div></div>
     </div>
   </div>
 </section>
 
 
 <!-- ═══════════ CLIENTS ═══════════ -->
+<style>
+/* updated: clients section only */
+#clients{background:var(--white)}
+#clients .section-head{margin-bottom:28px}
+
+/* top intro block */
+.clients-showcase{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:42px;
+  align-items:center;
+  margin-bottom:34px;
+}
+.clients-showcase-media{
+  position:relative;
+  border-radius:2px;
+  overflow:hidden;
+  min-height:200px;
+  background:#f4f4f4;
+}
+.clients-showcase-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.clients-floating-badge{
+  position:absolute;
+  left:28px;
+  right:28px;
+  bottom:28px;
+  background:rgba(255,255,255,.96);
+  border:1px solid rgba(20,44,92,.08);
+  border-radius:22px;
+  box-shadow:0 18px 40px rgba(12,20,34,.10);
+  padding:22px 26px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.clients-badge-icon{
+  width:58px;
+  height:58px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  background:linear-gradient(135deg,#fff4cc 0%,#f4c542 100%);
+  flex-shrink:0;
+}
+.clients-badge-title{
+  font-size:18px;
+  line-height:1.2;
+  font-weight:800;
+  color:var(--ink);
+  margin-bottom:4px;
+}
+.clients-badge-sub{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.5;
+}
+.clients-showcase-copy .section-label{
+  margin-bottom:16px;
+}
+.clients-showcase-copy .s-title{
+  margin-bottom:22px;
+  max-width:520px;
+}
+.clients-showcase-copy .s-desc{
+  max-width:560px;
+  margin-bottom:26px;
+}
+.clients-points{
+  display:grid;
+  gap:14px;
+}
+.clients-point{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  color:var(--ink-2);
+  font-size:18px;
+  line-height:1.6;
+}
+.clients-point-icon{
+  width:36px;
+  height:36px;
+  min-width:36px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#eef2f8;
+  color:var(--brand);
+  font-size:18px;
+  margin-top:2px;
+  box-shadow:inset 0 0 0 1px rgba(22,58,122,.06);
+}
+
+/* marquee block */
+
+
+/* marquee block */
+.clients-logo-marquee{
+  position:relative;
+  overflow:hidden;
+  border:1.5px solid var(--border);
+  border-radius:24px;
+  background:linear-gradient(180deg,#fff 0%,#fafbfd 100%);
+  padding:18px 0;
+}
+.clients-logo-marquee::before,
+.clients-logo-marquee::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:70px;
+  z-index:2;
+  pointer-events:none;
+}
+.clients-logo-marquee::before{
+  left:0;
+  background:linear-gradient(to right,#fff 0%,rgba(255,255,255,0) 100%);
+}
+.clients-logo-marquee::after{
+  right:0;
+  background:linear-gradient(to left,#fff 0%,rgba(255,255,255,0) 100%);
+}
+.clients-logo-track{
+  display:flex;
+  align-items:center;
+  width:max-content;
+  animation:clientLogoScroll 34s linear infinite;
+}
+/* .clients-logo-marquee:hover .clients-logo-track{
+  animation-play-state:paused;
+}
+
+/* logo container bhi thoda bada */
+.client-logo-item{
+  position:relative;
+  width:240px;
+  min-width:240px;
+  height:118px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 28px;
+}
+.client-logo-item::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:20%;
+  width:1px;
+  height:60%;
+  background:linear-gradient(
+    to bottom,
+    rgba(26,54,93,0),
+    rgba(26,54,93,.16),
+    rgba(26,54,93,0)
+  );
+}
+.client-logo-item img{
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  filter:none;
+  mix-blend-mode:normal;
+  transition:transform .25s ease;
+}
+.client-logo-item:hover img{
+  transform:scale(1.04);
+}
+
+/* editable per-logo sizing — increased */
+/* ================= desktop individual logo sizing ================= */
+.logo-parthsarthi{max-width:180px;max-height:72px}
+.logo-aashish{max-width:170px;max-height:74px}
+.logo-anytime{max-width:178px;max-height:72px}
+.logo-ashiana{max-width:176px;max-height:68px}
+.logo-chordia{max-width:200px;max-height:90px}
+.logo-clocktower{max-width:200px;max-height:100px}
+.logo-defined{max-width:200px;max-height:90px}
+.logo-dhinwa{max-width:230px;max-height:90px}
+.logo-elegant{max-width:168px;max-height:68px}
+.logo-global{max-width:172px;max-height:72px}
+.logo-kedia{max-width:250px;max-height:120px}
+.logo-kgk{max-width:200px;max-height:90px}
+.logo-kuldhara{max-width:200px;max-height:100px}
+.logo-maheshwari{max-width:182px;max-height:68px}
+.logo-onereality{max-width:130px;max-height:60px}
+.logo-srbuilders{max-width:230px;max-height:90px}
+.logo-taj{max-width:200px;max-height:90px}
+.logo-lalit{max-width:200px;max-height:80px}
+.logo-umaid{max-width:200px;max-height:80px}
+.logo-uttam{max-width:200px;max-height:90px}
+
+@keyframes clientLogoScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+@media (max-width:1024px){
+  .clients-showcase{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .clients-showcase-media{
+    min-height:420px;
+  }
+}
+
+@media (max-width:768px){
+  .clients-showcase{
+    gap:22px;
+    margin-bottom:24px;
+  }
+  .clients-showcase-media{
+    min-height:320px;
+    border-radius:22px;
+  }
+  .clients-floating-badge{
+    left:16px;
+    right:16px;
+    bottom:16px;
+    padding:16px 18px;
+    border-radius:18px;
+  }
+  .clients-badge-icon{
+    width:48px;
+    height:48px;
+    font-size:24px;
+    border-radius:14px;
+  }
+  .clients-badge-title{
+    font-size:16px;
+  }
+  .clients-badge-sub{
+    font-size:13px;
+  }
+  .clients-point{
+    font-size:16px;
+    line-height:1.5;
+  }
+  .clients-point-icon{
+    width:32px;
+    height:32px;
+    min-width:32px;
+    font-size:16px;
+  }
+
+  /* mobile container */
+  .client-logo-item{
+    width:185px;
+    min-width:185px;
+    height:92px;
+    padding:0 18px;
+  }
+
+  .clients-logo-marquee::before,
+  .clients-logo-marquee::after{
+    width:34px;
+  }
+
+  /* ================= mobile individual logo sizing ================= */
+  .logo-parthsarthi{max-width:142px;max-height:56px}
+  .logo-aashish{max-width:134px;max-height:58px}
+  .logo-anytime{max-width:140px;max-height:56px}
+  .logo-ashiana{max-width:138px;max-height:54px}
+  .logo-chordia{max-width:134px;max-height:56px}
+  .logo-clocktower{max-width:126px;max-height:58px}
+  .logo-defined{max-width:140px;max-height:56px}
+  .logo-dhinwa{max-width:132px;max-height:56px}
+  .logo-elegant{max-width:132px;max-height:54px}
+  .logo-global{max-width:136px;max-height:56px}
+  .logo-kedia{max-width:130px;max-height:58px}
+  .logo-kgk{max-width:134px;max-height:56px}
+  .logo-kuldhara{max-width:138px;max-height:56px}
+  .logo-maheshwari{max-width:144px;max-height:54px}
+  .logo-onereality{max-width:142px;max-height:54px}
+  .logo-srbuilders{max-width:144px;max-height:54px}
+  .logo-taj{max-width:118px;max-height:50px}
+  .logo-lalit{max-width:132px;max-height:50px}
+  .logo-umaid{max-width:124px;max-height:58px}
+  .logo-uttam{max-width:132px;max-height:56px}
+}
+</style>
+
 <section id="clients" class="section">
   <div class="section-inner">
 
-    <div class="clients-intro reveal">
-      <div class="clients-img">
-        <img src="https://images.unsplash.com/photo-1560185007-5f0bb1866cab?w=900&q=85" alt="Happy clients at our showroom">
-        <div class="clients-img-badge">
-          <div class="cib-icon">🤝</div>
+    <!-- intro block before marquee -->
+    <div class="clients-showcase reveal">
+      <div class="clients-showcase-media">
+        <img src="https://images.unsplash.com/photo-1560185007-5f0bb1866cab?w=900&q=85" alt="Premium interior project by Vaishali Traders">
+        <div class="clients-floating-badge">
+          <div class="clients-badge-icon">🤝</div>
           <div>
-            <div class="cib-t">1 Lakh+ Happy Customers</div>
-            <div class="cib-s">Serving Jaipur since 1989</div>
+            <div class="clients-badge-title">1 Lakh+ Happy Customers</div>
+            <div class="clients-badge-sub">Serving Jaipur since 1989</div>
           </div>
         </div>
       </div>
-      <div class="clients-copy">
+
+      <div class="clients-showcase-copy">
         <div class="section-label">Our Valued Clients</div>
-        <h2 class="s-title">Trusted by<br>Jaipur's <i>Finest</i></h2>
-        <p class="s-desc">From individual homeowners designing their dream bathroom to Jaipur's most celebrated architects, builders and interior designers — Vaishali Traders has been the partner of choice for over 35 years.</p>
-        <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--body)">
-            <span style="width:22px;height:22px;border-radius:50%;background:var(--brand-pale);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</span>
-            Individual homeowners & families
+        <h2 class="s-title">Trusted by Jaipur's <i>Finest</i></h2>
+        <p class="s-desc">
+          From individual homeowners designing their dream bathroom to Jaipur's most celebrated architects,
+          builders and interior designers — Vaishali Traders has been the partner of choice for over 35 years.
+        </p>
+
+        <div class="clients-points">
+          <div class="clients-point">
+            <div class="clients-point-icon">✓</div>
+            <div>Individual homeowners & families</div>
           </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--body)">
-            <span style="width:22px;height:22px;border-radius:50%;background:var(--brand-pale);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</span>
-            Architects & interior designers
+          <div class="clients-point">
+            <div class="clients-point-icon">✓</div>
+            <div>Architects & interior designers</div>
           </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--body)">
-            <span style="width:22px;height:22px;border-radius:50%;background:var(--brand-pale);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</span>
-            Real estate developers & builders
+          <div class="clients-point">
+            <div class="clients-point-icon">✓</div>
+            <div>Real estate developers & builders</div>
           </div>
-          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--body)">
-            <span style="width:22px;height:22px;border-radius:50%;background:var(--brand-pale);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</span>
-            Hotels, resorts & commercial projects
+          <div class="clients-point">
+            <div class="clients-point-icon">✓</div>
+            <div>Hotels, resorts & commercial projects</div>
           </div>
         </div>
       </div>
     </div>
 
-    </div>
-
-    <!-- Client Logo Grid -->
-    <div class="reveal" style="margin-top:56px">
-      <div class="section-label" style="margin-bottom:28px">Our Valued Clients</div>
-      <div class="client-logo-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px">
-        <div class="client-logo-card"><img src="images/logo/logo/Parth Sarthi Builders.png" alt="Parth Sarthi Builders"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/aashish group.jpg" alt="Aashish Group" style="max-height:60px"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/anytime fitness.webp" alt="Anytime Fitness"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/ashiana.png" alt="Ashiana"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/chordia.png" alt="Chordia"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/clocktower1.png" alt="Clock Tower"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/defineD Group.png" alt="defineD Group"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/dhinwa.png" alt="Dhinwa"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/elegant.png" alt="Elegant"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/global.jpg" alt="Global"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/kedia.jpg" alt="Kedia" style="max-height:60px"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/kgk.png" alt="KGK"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/kuldhara.png" alt="Kuldhara"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/maheswari-new.png" alt="Maheshwari"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/one reality.webp" alt="One Reality"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/s r builders.png" alt="S R Builders"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/taj.png" alt="Taj"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/the lalit.webp" alt="The Lalit"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/umaid.jpg" alt="Umaid"></div>
-        <div class="client-logo-card"><img src="images/logo/logo/uttam1.png" alt="Uttam"></div>
+    <!-- scrolling logos -->
+    <div class="clients-logo-marquee reveal">
+      <div class="clients-logo-track">
+        <div class="client-logo-item"><img src="images/logo/logo/Parth Sarthi Builders.png" alt="Parth Sarthi Builders" class="logo-parthsarthi"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/aashish group.jpg" alt="Aashish Group" class="logo-aashish"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/anytime fitness.webp" alt="Anytime Fitness" class="logo-anytime"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/ashiana.png" alt="Ashiana" class="logo-ashiana"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/chordia.png" alt="Chordia" class="logo-chordia"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/clocktower1.png" alt="Clock Tower" class="logo-clocktower"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/defineD Group.png" alt="defineD Group" class="logo-defined"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/dhinwa.png" alt="Dhinwa" class="logo-dhinwa"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/elegant.png" alt="Elegant" class="logo-elegant"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/global.jpg" alt="Global" class="logo-global"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/kedia.jpg" alt="Kedia" class="logo-kedia"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/kgk.png" alt="KGK" class="logo-kgk"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/kuldhara.png" alt="Kuldhara" class="logo-kuldhara"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/maheswari-new.png" alt="Maheshwari" class="logo-maheshwari"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/one reality.webp" alt="One Reality" class="logo-onereality"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/s r builders.png" alt="S R Builders" class="logo-srbuilders"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/taj.png" alt="Taj" class="logo-taj"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/the lalit.webp" alt="The Lalit" class="logo-lalit"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/umaid.jpg" alt="Umaid" class="logo-umaid"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/uttam1.png" alt="Uttam" class="logo-uttam"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/Parth Sarthi Builders.png" alt="Parth Sarthi Builders" class="logo-parthsarthi"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/aashish group.jpg" alt="Aashish Group" class="logo-aashish"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/anytime fitness.webp" alt="Anytime Fitness" class="logo-anytime"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/ashiana.png" alt="Ashiana" class="logo-ashiana"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/chordia.png" alt="Chordia" class="logo-chordia"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/clocktower1.png" alt="Clock Tower" class="logo-clocktower"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/defineD Group.png" alt="defineD Group" class="logo-defined"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/dhinwa.png" alt="Dhinwa" class="logo-dhinwa"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/elegant.png" alt="Elegant" class="logo-elegant"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/global.jpg" alt="Global" class="logo-global"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/kedia.jpg" alt="Kedia" class="logo-kedia"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/kgk.png" alt="KGK" class="logo-kgk"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/kuldhara.png" alt="Kuldhara" class="logo-kuldhara"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/maheswari-new.png" alt="Maheshwari" class="logo-maheshwari"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/one reality.webp" alt="One Reality" class="logo-onereality"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/s r builders.png" alt="S R Builders" class="logo-srbuilders"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/taj.png" alt="Taj" class="logo-taj"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/the lalit.webp" alt="The Lalit" class="logo-lalit"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/umaid.jpg" alt="Umaid" class="logo-umaid"></div>
+        <div class="client-logo-item"><img src="images/logo/logo/uttam1.png" alt="Uttam" class="logo-uttam"></div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ═══════════ SHOWROOM ═══════════ -->
-<div id="showroom" class="showroom-wrap">
-  <div class="sw-photo">
-    <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=1000&q=85" alt="Vaishali Traders Showroom">
-    <div class="sw-photo-overlay"></div>
+<!-- ===================== UPDATED CSS: MERGED DIFFERENCE + CONTACT/STORES ===================== -->
+<style>
+/* merged why + contact section */
+#showroom{
+  background:var(--ink);
+  padding-top:88px;
+  padding-bottom:30px;
+}
+.why-contact-wrap{
+  display:flex;
+  flex-direction:column;
+  gap:34px;
+}
+.why-contact-head .section-label{
+  color:var(--gold-light);
+}
+.why-contact-head .section-label::before,
+.why-contact-head .section-label span{
+  background:var(--gold-light);
+}
+.why-contact-head .s-title{
+  color:#fff;
+}
+.why-contact-head .s-title i{
+  color:var(--gold-light);
+}
+#showroom .section-inner{
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+/* top 4 cards in one row */
+.why-grid.one-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:26px;
+  overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));
+
+}
+.why-grid.one-row .why-card{
+  background:transparent;
+  border:none;
+  border-right:1px solid rgba(255,255,255,.08);
+  padding:34px 24px 30px;
+  min-height:100%;
+  
+}
+.why-card:hover{background:rgba(255,255,255,.03)}
+.why-grid.one-row .why-card:hover{background:rgba(255,255,255,.03)}
+
+.why-grid.one-row .why-card:last-child{
+  border-right:none;
+}
+
+.why-grid.one-row .wc-icon{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(38,72,151,.25);
+  margin-bottom:18px;
+  font-size:18px;
+}
+.why-grid.one-row .wc-n{
+  color:var(--gold-light);
+  font-family:"DM Serif Display",serif;
+  font-size:34px;
+  line-height:1;
+  margin-bottom:10px;
+}
+.why-grid.one-row .wc-t{
+  color:#fff;
+  font-weight:700;
+  font-size:20px;
+  line-height:1.25;
+  margin-bottom:10px;
+}
+.why-grid.one-row .wc-b{
+  color:rgba(255,255,255,.64);
+  font-size:15px;
+  line-height:1.8;
+}
+
+/* lower merged contact block */
+.showroom-merged{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:26px;
+  align-items:stretch;
+}
+.showroom-image-card{
+  position:relative;
+  min-height:520px;
+  border-radius:26px;
+  overflow:hidden;
+  background:#121822;
+  border:1px solid rgba(255,255,255,.08);
+}
+.showroom-image-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.showroom-image-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(4,8,16,.72) 0%,rgba(4,8,16,.18) 48%,rgba(4,8,16,.08) 100%);
+}
+
+.showroom-image-badge .sib-icon{
+  width:50px;
+  height:50px;
+  min-width:50px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(232,184,75,.14);
+  color:var(--gold-light);
+  font-size:24px;
+}
+.showroom-image-badge .sib-title{
+  color:#fff;
+  font-size:18px;
+  font-weight:800;
+  line-height:1.2;
+  margin-bottom:4px;
+}
+.showroom-image-badge .sib-sub{
+  color:rgba(255,255,255,.72);
+  font-size:14px;
+  line-height:1.5;
+}
+
+.showroom-content{
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.025));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:26px;
+  padding:30px 28px;
+}
+.showroom-content .section-label{
+  color:var(--gold-light);
+  margin-bottom:12px;
+}
+.showroom-content .section-label::before,
+.showroom-content .section-label span{
+  background:var(--gold-light);
+}
+.showroom-content h3{
+  color:#fff;
+  font-family:"DM Serif Display",serif;
+  font-size:44px;
+  line-height:1.08;
+  margin:0 0 14px;
+}
+.showroom-content h3 i{
+  color:var(--gold-light);
+}
+.showroom-content .sc-desc{
+  color:rgba(255,255,255,.74);
+  font-size:17px;
+  line-height:1.8;
+  margin-bottom:22px;
+}
+
+.branch-cards.dark{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-bottom:14px;
+}
+.branch-cards.dark .branch-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:16px;
+  padding:16px 16px 14px;
+  box-shadow:none;
+}
+.branch-cards.dark .branch-card:hover{
+  border-color:rgba(232,184,75,.35);
+  transform:none;
+}
+.branch-cards.dark .br-num{
+  color:var(--gold-light);
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:800;
+  margin-bottom:10px;
+}
+.branch-cards.dark .br-addr{
+  color:#fff;
+  font-size:16px;
+  line-height:1.75;
+}
+
+.hours-card.dark{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:16px;
+  overflow:hidden;
+  margin-bottom:18px;
+}
+.hours-card.dark .hr-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:15px 16px;
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.hours-card.dark .hr-row:last-child{
+  border-bottom:none;
+}
+.hours-card.dark .hr-day{
+  color:#fff;
+  font-size:15px;
+}
+.hours-card.dark .hr-time{
+  color:#fff;
+  font-weight:700;
+  font-size:15px;
+}
+.hours-card.dark .hr-time.hr-closed{
+  color:#ff9797;
+}
+
+.contact-rows.dark{
+  display:grid;
+  gap:14px;
+  margin-bottom:22px;
+}
+.contact-rows.dark .contact-r{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#fff;
+}
+.contact-rows.dark .contact-icon{
+  width:34px;
+  height:34px;
+  min-width:34px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(38,72,151,.25);
+  color:#fff;
+}
+.contact-rows.dark a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+.contact-rows.dark a:hover{
+  color:var(--gold-light);
+}
+
+.showroom-content .sw-btns{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.showroom-content .btn-solid{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-width:138px;
+}
+.showroom-content .btn-outline{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-width:148px;
+  border:1px solid rgba(255,255,255,.14);
+  color:#fff;
+  background:transparent;
+}
+.showroom-content .btn-outline:hover{
+  border-color:rgba(232,184,75,.45);
+  color:var(--gold-light);
+  background:rgba(232,184,75,.06);
+}
+
+@media (max-width:1200px){
+  .why-grid.one-row{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .why-grid.one-row .why-card:nth-child(2){
+    border-right:none;
+  }
+  .why-grid.one-row .why-card:nth-child(1),
+  .why-grid.one-row .why-card:nth-child(2){
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+}
+@media (max-width:1024px){
+  .showroom-merged{
+    grid-template-columns:1fr;
+  }
+  .showroom-image-card{
+    min-height:400px;
+  }
+}
+@media (max-width:768px){
+  #why-contact-merged{
+    padding-top:72px;
+    padding-bottom:72px;
+  }
+  .why-grid.one-row{
+    grid-template-columns:1fr;
+  }
+  .why-grid.one-row .why-card{
+    border-right:none;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    padding:24px 18px;
+  }
+  .why-grid.one-row .why-card:last-child{
+    border-bottom:none;
+  }
+
+  @media (max-width:768px){
+  #showroom .section-inner{
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+  .branch-cards.dark{
+    grid-template-columns:1fr;
+  }
+  .showroom-content{
+    padding:22px 18px;
+  }
+  .showroom-content h3{
+    font-size:34px;
+  }
+  .showroom-image-card{
+    min-height:300px;
+    border-radius:22px;
+  }
+  .showroom-image-badge{
+    left:16px;
+    right:16px;
+    bottom:16px;
+    padding:14px;
+  }
+}
+</style>
+
+<!-- ===================== MERGED DIFFERENCE + CONTACT/STORES ===================== -->
+<section id="showroom" class="section">
+  <div class="section-inner">
+    <div class="why-contact-wrap">
+
+      <div class="why-contact-head reveal">
+        <div class="section-label"><span></span>Why Choose Us</div>
+        <h2 class="s-title">The Vaishali Traders <i>Difference</i></h2>
+      </div>
+
+      <!-- same section feel, but 4 cards in one row -->
+      <div class="why-grid one-row reveal">
+        <div class="why-card">
+          <div class="wc-icon">🏛️</div>
+          <div class="wc-n">37+</div>
+          <div class="wc-t">Years in Business</div>
+          <div class="wc-b">Est. 1989 — building lasting relationships with homeowners, architects, builders and interior designers across Jaipur and Rajasthan.</div>
+        </div>
+
+        <div class="why-card">
+          <div class="wc-icon">👥</div>
+          <div class="wc-n">1L+</div>
+          <div class="wc-t">Satisfied Customers</div>
+          <div class="wc-b">Over 1,00,000 happy clients trust us. A client-first approach and expert guidance — from selection to installation.</div>
+        </div>
+
+        <div class="why-card">
+          <div class="wc-icon">🏪</div>
+          <div class="wc-n">2</div>
+          <div class="wc-t">Experience Showrooms</div>
+          <div class="wc-b">Gopalpura Bypass and Vaishali Nagar — two fully stocked showrooms where you can experience every product in person.</div>
+        </div>
+
+        <div class="why-card">
+          <div class="wc-icon">💬</div>
+          <div class="wc-n">FREE</div>
+          <div class="wc-t">Consultation & Quotation</div>
+          <div class="wc-b">Expert team, zero obligations — we help plan and execute your dream space end-to-end, completely free of charge.</div>
+        </div>
+      </div>
+
+      <!-- merged contact/store block in same dark section -->
+      <div class="showroom-merged reveal">
+        <div class="showroom-image-card">
+          <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=1000&q=85" alt="Vaishali Traders showroom interior">
+          <div class="showroom-image-overlay"></div><div class="showroom-image-badge">
+          </div>
+        </div>
+
+        <div class="showroom-content">
+          <div class="section-label"><span></span>Visit Our Showrooms</div>
+          <h3>Two Locations,<br><i>One Standard</i></h3>
+          <p class="sc-desc">
+            Experience our complete product range in person — our experts offer free consultation and custom quotations.
+          </p>
+
+          <div class="branch-cards dark">
+            <div class="branch-card">
+              <div class="br-num">Branch 1 · Gopalpura</div>
+              <div class="br-addr">
+                240, New Atish Market,<br>
+                Gopalpura Bypass,<br>
+                <strong>Jaipur – 302020</strong>
+              </div>
+            </div>
+
+            <div class="branch-card">
+              <div class="br-num">Branch 2 · Vaishali Nagar</div>
+              <div class="br-addr">
+                E-796, Behind Gupta Jewellers,<br>
+                Amrapali Marg, Vaishali Nagar,<br>
+                <strong>Jaipur – 302021</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="hours-card dark">
+            <div class="hr-row">
+              <span class="hr-day">Monday – Saturday</span>
+              <span class="hr-time">10:00 AM – 8:00 PM</span>
+            </div>
+            <div class="hr-row">
+              <span class="hr-day">Sunday</span>
+              <span class="hr-time hr-closed">Closed</span>
+            </div>
+          </div>
+
+          <div class="contact-rows dark">
+            <div class="contact-r">
+              <div class="contact-icon">📞</div>
+              <a href="tel:+919251049050">+91 92510 49050</a>
+            </div>
+            <div class="contact-r">
+              <div class="contact-icon">✉️</div>
+              <a href="mailto:vaishalitrader@gmail.com">vaishalitrader@gmail.com</a>
+            </div>
+            <div class="contact-r">
+              <div class="contact-icon">🌐</div>
+              <a href="https://vaishalitraders.in" target="_blank">www.vaishalitraders.in</a>
+            </div>
+          </div>
+
+          <div class="sw-btns">
+            <a href="tel:+919251049050" class="btn-solid">
+              <svg style="width:18px;height:18px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              Call Now
+            </a>
+
+            <a href="https://wa.me/919251049050" class="btn-outline" target="_blank">
+              <svg style="width:18px;height:18px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.762-1.654-2.06-.173-.297-.018-.458.13-.606.135-.135.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path fill="currentColor" d="M12.004 2.003c-5.52 0-9.997 4.477-9.997 9.997 0 1.762.461 3.471 1.338 4.988L2 22.003l5.187-1.359a9.956 9.956 0 004.817 1.229h.004c5.52 0 9.993-4.477 9.993-9.997 0-2.67-1.04-5.18-2.928-7.068A9.956 9.956 0 0012.004 2.003zm0 18.305h-.003a8.276 8.276 0 01-4.22-1.153l-.303-.18-3.14.823.839-3.065-.197-.314a8.268 8.268 0 01-1.268-4.416c0-4.569 3.72-8.286 8.293-8.286 2.215 0 4.296.864 5.861 2.431a8.237 8.237 0 012.427 5.858c-.002 4.57-3.72 8.302-8.289 8.302z"/>
+              </svg>
+              WhatsApp Us
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
-  <div class="sw-content">
-    <div class="section-label">Visit Our Showrooms</div>
-    <h2 class="s-title" style="margin-bottom:0">Two Locations,<br><i>One Standard</i></h2>
-    <p class="s-desc">Experience our complete product range in person — our experts offer free consultation and custom quotations.</p>
-    <div class="branch-cards">
-      <div class="branch-card"><div class="br-num">Branch 1 · Gopalpura</div><div class="br-addr">240, New Atish Market,<br>Gopalpura Bypass,<br><strong>Jaipur – 302020</strong></div></div>
-      <div class="branch-card"><div class="br-num">Branch 2 · Vaishali Nagar</div><div class="br-addr">E-796, Behind Gupta Jewellers,<br>Amrapali Marg, Vaishali Nagar,<br><strong>Jaipur – 302021</strong></div></div>
-    </div>
-    <div class="hours-card">
-      <div class="hr-row"><span class="hr-day">Monday – Saturday</span><span class="hr-time">10:00 AM – 8:00 PM</span></div>
-      <div class="hr-row"><span class="hr-day">Sunday</span><span class="hr-time hr-closed">Closed</span></div>
-    </div>
-    <div class="contact-rows">
-      <div class="contact-r"><div class="contact-icon">📞</div><a href="tel:+919251049050">+91 92510 49050</a></div>
-      <div class="contact-r"><div class="contact-icon">✉️</div><a href="mailto:vaishalitrader@gmail.com">vaishalitrader@gmail.com</a></div>
-      <div class="contact-r"><div class="contact-icon">🌐</div><a href="https://vaishalitraders.in">www.vaishalitraders.in</a></div>
-    </div>
-    <div class="sw-btns">
-      <a href="tel:+919251049050" class="btn-solid">
-        <svg style="width:18px;height:18px" viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-        Call Now
-      </a>
-      <a href="https://wa.me/919251049050" class="btn-outline" target="_blank">
-        <svg style="width:18px;height:18px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path fill="currentColor" d="M12.004 2.003c-5.52 0-9.997 4.477-9.997 9.997 0 1.762.461 3.471 1.338 4.988L2 22.003l5.187-1.359a9.956 9.956 0 004.817 1.229h.004c5.52 0 9.993-4.477 9.993-9.997 0-2.67-1.04-5.18-2.928-7.068A9.956 9.956 0 0012.004 2.003zm0 18.305h-.003a8.276 8.276 0 01-4.22-1.153l-.303-.18-3.14.823.839-3.065-.197-.314a8.268 8.268 0 01-1.268-4.416c0-4.569 3.72-8.286 8.293-8.286 2.215 0 4.296.864 5.861 2.431a8.237 8.237 0 012.427 5.858c-.002 4.57-3.72 8.302-8.289 8.302z"/></svg>
-        WhatsApp Us
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════ CATALOGUES ═══════════ -->
-
-
+</section>
 
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer>
